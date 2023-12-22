@@ -1,0 +1,18 @@
+SDK Release Description : 240 project firmware
+SDK Release Package List: 	
+	Release_note.txt		
+	Library--| CMSIS		: ARM Cortex M7 Library
+	              | Device		: SKY32B750 System Library
+	              | StdDriver	                : Standard Driver for each module
+	Jupiter   : mmwave firmware project
+	              | APP		: Signal processing flow
+	              | Listings		: Listing file
+	              | MidDriver	                : Hardware Abstract Layer
+	              | Objects	                : The output file
+	              | User	                : User layer
+
+SDK Release Date          : 2023/1/3
+SDK Release Version     : rev 0.0.1
+SDK Release Note         : The First firmware of Project 240. 						 
+									   
+							 

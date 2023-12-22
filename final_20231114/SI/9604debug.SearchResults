@@ -1,0 +1,8 @@
+---- FireSignle Matches (7 in 4 files) ----
+App_Func.c (e:\桦成\9604debug\mmwave_9604wmld_v1.0.4\jupiter\app):extern unsigned char FireSignle;
+App_Func.c (e:\桦成\9604debug\mmwave_9604wmld_v1.0.4\jupiter\app):        if(FireSignle==0x00)
+Main.c (e:\桦成\9604debug\mmwave_9604wmld_v1.0.4\jupiter\user):unsigned char FireSignle=0;
+Product.c (e:\桦成\9604debug\mmwave_9604wmld_v1.0.4\jupiter\user):extern unsigned char FireSignle;
+Product.c (e:\桦成\9604debug\mmwave_9604wmld_v1.0.4\jupiter\user):                FireSignle=0;
+Usart_Protocol.c (e:\桦成\9604debug\mmwave_9604wmld_v1.0.4\jupiter\user):extern unsigned char FireSignle;
+Usart_Protocol.c (e:\桦成\9604debug\mmwave_9604wmld_v1.0.4\jupiter\user):        FireSignle=0XFF;    

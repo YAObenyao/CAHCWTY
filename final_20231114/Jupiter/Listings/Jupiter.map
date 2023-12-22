@@ -1,0 +1,1869 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_sky32b750.o(RESET) refers to startup_sky32b750.o(STACK) for __initial_sp
+    startup_sky32b750.o(RESET) refers to startup_sky32b750.o(.text) for Reset_Handler
+    startup_sky32b750.o(RESET) refers to system_sky32b750.o(i.NMI_Handler) for NMI_Handler
+    startup_sky32b750.o(RESET) refers to irq_handler.o(i.SysTick_Handler) for SysTick_Handler
+    startup_sky32b750.o(RESET) refers to usart_driver.o(i.USCI4_IRQHandler) for USCI4_IRQHandler
+    startup_sky32b750.o(RESET) refers to led.o(i.TMRA_IRQHandler) for TMRA_IRQHandler
+    startup_sky32b750.o(RESET) refers to dma.o(i.DMA_IRQHandler) for DMA_IRQHandler
+    startup_sky32b750.o(RESET) refers to irq_handler.o(i.BB_IRQHandler) for BB_IRQHandler
+    startup_sky32b750.o(RESET) refers to ospi_driver.o(i.OSPI0_IRQHandler) for OSPI0_IRQHandler
+    startup_sky32b750.o(RESET) refers to ospi_driver.o(i.OSPI1_IRQHandler) for OSPI1_IRQHandler
+    startup_sky32b750.o(.text) refers to system_sky32b750.o(i.SystemInit) for SystemInit
+    startup_sky32b750.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_sky32b750.o(i.HRC_System_Clock_Update) refers to system_sky32b750.o(.data) for hrc_clk
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to system_sky32b750.o(i.Get_SysClk_Config) for Get_SysClk_Config
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to system_sky32b750.o(i.Set_Flash_WS) for Set_Flash_WS
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to system_sky32b750.o(i.Set_PLL) for Set_PLL
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to system_sky32b750.o(i.Set_SysClk_Div) for Set_SysClk_Div
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to wdt.o(i.WDT_Open) for WDT_Open
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to uldiv.o(.text) for __aeabi_uldivmod
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to system_sky32b750.o(i.Set_SysClk_Config) for Set_SysClk_Config
+    system_sky32b750.o(i.HXTAL_Caliber_LRC) refers to system_sky32b750.o(.data) for lrc_clk
+    system_sky32b750.o(i.LRC_Caliber_HRC) refers to system_sky32b750.o(i.Get_SysClk_Config) for Get_SysClk_Config
+    system_sky32b750.o(i.LRC_Caliber_HRC) refers to system_sky32b750.o(i.Set_SysClk_Div) for Set_SysClk_Div
+    system_sky32b750.o(i.LRC_Caliber_HRC) refers to wdt.o(i.WDT_Open) for WDT_Open
+    system_sky32b750.o(i.LRC_Caliber_HRC) refers to uldiv.o(.text) for __aeabi_uldivmod
+    system_sky32b750.o(i.LRC_Caliber_HRC) refers to system_sky32b750.o(i.Set_SysClk_Config) for Set_SysClk_Config
+    system_sky32b750.o(i.LRC_Caliber_HRC) refers to system_sky32b750.o(.data) for lrc_clk
+    system_sky32b750.o(i.NMI_Handler) refers to system_sky32b750.o(.data) for WKU_FLAG_sta0
+    system_sky32b750.o(i.PLL_System_Clock_Update) refers to system_sky32b750.o(.data) for pll_clk
+    system_sky32b750.o(i.Set_PLL) refers to system_sky32b750.o(.data) for pll_clk
+    system_sky32b750.o(i.Set_SysClk_Config) refers to system_sky32b750.o(i.Set_Flash_WS) for Set_Flash_WS
+    system_sky32b750.o(i.Set_SysClk_Config) refers to system_sky32b750.o(i.Set_PLL) for Set_PLL
+    system_sky32b750.o(i.Set_SysClk_Config) refers to system_sky32b750.o(i.Set_CanClk_Div) for Set_CanClk_Div
+    system_sky32b750.o(i.Set_SysClk_Config) refers to system_sky32b750.o(i.Set_SysClk_Div) for Set_SysClk_Div
+    system_sky32b750.o(i.SystemInit) refers to system_sky32b750.o(i.Cache_Invalidate) for Cache_Invalidate
+    system_sky32b750.o(i.SystemInit) refers to system_sky32b750.o(i.Cache_Disable) for Cache_Disable
+    system_sky32b750.o(i.SystemInit) refers to system_sky32b750.o(i.FPU_Enable) for FPU_Enable
+    delay.o(i.Calib_SW_ms) refers to system_sky32b750.o(.data) for hclk
+    delay.o(i.Calib_SW_ms) refers to delay.o(.data) for ms_step
+    delay.o(i.HW_Delay_ms) refers to system_sky32b750.o(.data) for hclk
+    delay.o(i.HW_Delay_us) refers to system_sky32b750.o(.data) for hclk
+    delay.o(i.SW_Delay_ms) refers to delay.o(.data) for ms_step
+    usci.o(i.USCI_SPI_Init) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_SPI_Init) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_SPI_Receive) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_SPI_Receive) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_SPI_Slave_Receive) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_SPI_Slave_Receive) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_SPI_Slave_Transmit) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_SPI_Slave_Transmit) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_SPI_TRx) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_SPI_TRx) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_SPI_Transmit) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_SPI_Transmit) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_U7816_Init) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_U7816_Init) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_U7816_Receive) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_U7816_Receive) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_U7816_Transmit) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_U7816_Transmit) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_UART_Init) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_UART_Init) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_UART_Init) refers to system_sky32b750.o(.data) for pclk
+    usci.o(i.USCI_UART_Receive) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_UART_Receive) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_UART_Transmit) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_UART_Transmit) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    usci.o(i.USCI_UART_TransmitOneByte) refers to usci.o(i.USCI_Clear_ESR) for USCI_Clear_ESR
+    usci.o(i.USCI_UART_TransmitOneByte) refers to usci.o(i.USCI_Clear_ISR) for USCI_Clear_ISR
+    dma.o(i.DMA_Channel_Configure) refers to dma.o(i.DMA_Num2Ch) for DMA_Num2Ch
+    dma.o(i.DMA_Channel_Configure) refers to dma.o(.bss) for dma_callback
+    dma.o(i.DMA_Channel_Irq_Disable) refers to dma.o(i.DMA_Num2Ch) for DMA_Num2Ch
+    dma.o(i.DMA_Channel_Irq_Enable) refers to dma.o(i.DMA_Num2Ch) for DMA_Num2Ch
+    dma.o(i.DMA_Channel_Irq_IsEnable) refers to dma.o(i.DMA_Num2Ch) for DMA_Num2Ch
+    dma.o(i.DMA_IRQHandler) refers to dma.o(i.DMA_Clear_Irq) for DMA_Clear_Irq
+    dma.o(i.DMA_IRQHandler) refers to dma.o(.bss) for dma_irq_sta
+    dma.o(i.DMA_Init) refers to dma.o(i.DMA_Clear_All_Irq) for DMA_Clear_All_Irq
+    dma.o(i.DMA_Init) refers to dma.o(i.DMA_Channel_Irq_Disable) for DMA_Channel_Irq_Disable
+    dma.o(i.DMA_Init) refers to dma.o(i.DMA_Disable) for DMA_Disable
+    wdt.o(i.WDT_Open) refers to wdt.o(i.WDT_Enable) for WDT_Enable
+    wdt.o(i.WDT_Reset) refers to wdt.o(i.WDT_Disable) for WDT_Disable
+    wdt.o(i.WDT_Set_ms) refers to wdt.o(i.WDT_Open) for WDT_Open
+    wdt.o(i.WDT_Set_ms) refers to system_sky32b750.o(.data) for lrc_clk
+    efc.o(i.EFC_Erase1Page) refers to efc.o(i.EFC_Get_ActualAddress) for EFC_Get_ActualAddress
+    efc.o(i.EFC_Erase1Page_and_Check) refers to efc.o(i.EFC_Erase1Page) for EFC_Erase1Page
+    efc.o(i.EFC_ReWrite) refers to efc.o(i.EFC_WriteInside1Page) for EFC_WriteInside1Page
+    efc.o(i.EFC_ReWrite_loop) refers to efc.o(i.EFC_ReWrite) for EFC_ReWrite
+    efc.o(i.EFC_Write1Page) refers to efc.o(i.EFC_Get_ActualAddress) for EFC_Get_ActualAddress
+    efc.o(i.EFC_Write1Page_and_Check) refers to efc.o(i.EFC_Write1Page) for EFC_Write1Page
+    efc.o(i.EFC_WriteInside1Page) refers to efc.o(i.EFC_Get_ActualAddress) for EFC_Get_ActualAddress
+    efc.o(i.EFC_WriteInside1Page) refers to efc.o(.bss) for flash_buf
+    spi_driver.o(i.RF_ReadRegSPI) refers to spi_driver.o(i.RF_SPI_CS_CTRL) for RF_SPI_CS_CTRL
+    spi_driver.o(i.RF_ReadRegSPI) refers to spi_driver.o(.bss) for SPI_write_data
+    spi_driver.o(i.RF_ReadWaveSPI) refers to spi_driver.o(i.RF_SPI_CS_CTRL) for RF_SPI_CS_CTRL
+    spi_driver.o(i.RF_ReadWaveSPI) refers to usci.o(i.USCI_SPI_TRx) for USCI_SPI_TRx
+    spi_driver.o(i.RF_ReadWaveSPI) refers to spi_driver.o(.bss) for SPI_write_data
+    spi_driver.o(i.RF_WriteCmdSPI) refers to spi_driver.o(i.RF_SPI_CS_CTRL) for RF_SPI_CS_CTRL
+    spi_driver.o(i.RF_WriteCmdSPI) refers to usci.o(i.USCI_SPI_Transmit) for USCI_SPI_Transmit
+    spi_driver.o(i.RF_WriteCmdSPI) refers to spi_driver.o(.bss) for SPI0
+    spi_driver.o(i.RF_WriteRegSPI_Fast) refers to spi_driver.o(i.RF_SPI_CS_CTRL) for RF_SPI_CS_CTRL
+    spi_driver.o(i.RF_WriteRegSPI_Fast) refers to spi_driver.o(.bss) for SPI_write_data
+    spi_driver.o(i.RF_WriteWaveSPI) refers to spi_driver.o(i.RF_SPI_CS_CTRL) for RF_SPI_CS_CTRL
+    spi_driver.o(i.RF_WriteWaveSPI) refers to usci.o(i.USCI_SPI_Transmit) for USCI_SPI_Transmit
+    spi_driver.o(i.RF_WriteWaveSPI) refers to spi_driver.o(.bss) for SPI_write_data
+    spi_driver.o(i.SPI_Init) refers to gpio.o(i.GPIO_PullUp) for GPIO_PullUp
+    spi_driver.o(i.SPI_Init) refers to pinmux.o(i.PinMux_Set) for PinMux_Set
+    spi_driver.o(i.SPI_Init) refers to usci.o(i.USCI_SPI_Init) for USCI_SPI_Init
+    spi_driver.o(i.SPI_Init) refers to spi_driver.o(.bss) for SPI0
+    gpio_driver.o(i.GPIO_Init) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    gpio_driver.o(i.GPIO_Init) refers to gpio.o(i.GPIO_PullUp) for GPIO_PullUp
+    usart_driver.o(i.USART_Init) refers to pinmux.o(i.PinMux_Set) for PinMux_Set
+    usart_driver.o(i.USART_Init) refers to usci.o(i.USCI_UART_Init) for USCI_UART_Init
+    usart_driver.o(i.USART_Init) refers to memseta.o(.text) for __aeabi_memclr4
+    usart_driver.o(i.USART_Init) refers to usart_driver.o(.bss) for USART0
+    usart_driver.o(i.USART_Transmit_Bytes) refers to usci.o(i.USCI_UART_Transmit) for USCI_UART_Transmit
+    usart_driver.o(i.USART_Transmit_Int) refers to usci.o(i.USCI_UART_Transmit) for USCI_UART_Transmit
+    usart_driver.o(i.USCI4_IRQHandler) refers to usart_driver.o(.bss) for strUsart
+    usart_driver.o(i.USCI4_IRQHandler) refers to usart_driver.o(.data) for bConfigMode
+    usart_driver.o(i._ttywrch) refers to usart_driver.o(i.sendchar) for sendchar
+    usart_driver.o(i.fgetc) refers to usart_driver.o(i.getkey) for getkey
+    usart_driver.o(i.fgetc) refers to usart_driver.o(i.sendchar) for sendchar
+    usart_driver.o(i.fputc) refers to usart_driver.o(i.sendchar) for sendchar
+    usart_driver.o(i.usci_uART_rx_it) refers to usart_driver.o(.bss) for strUsart
+    delay_driver.o(i.Cnt_Delay_ms) refers to delay_driver.o(i.Cnt_Delay_us) for Cnt_Delay_us
+    delay_driver.o(i.Cnt_Delay_ms) refers to system_sky32b750.o(.data) for hclk
+    delay_driver.o(i.SysTick_Init) refers to system_sky32b750.o(.data) for hclk
+    irq_handler.o(i.BB_IRQHandler) refers to bb_config.o(.data) for bb_regb_str
+    irq_handler.o(i.BB_IRQHandler) refers to irq_handler.o(.data) for firstChirpCnt
+    irq_handler.o(i.SysTick_Handler) refers to irq_handler.o(.data) for SysTick_Counter
+    dma_driver.o(i.DMA_Config_Init) refers to dma.o(i.DMA_Clear_All_Irq) for DMA_Clear_All_Irq
+    dma_driver.o(i.DMA_Config_Init) refers to dma.o(i.DMA_Init) for DMA_Init
+    dma_driver.o(i.DMA_Start_TransferM2M_32) refers to dma.o(i.DMA_Disable) for DMA_Disable
+    dma_driver.o(i.DMA_Start_TransferM2M_32) refers to dma.o(i.DMA_Channel_Configure) for DMA_Channel_Configure
+    dma_driver.o(i.DMA_Start_TransferM2M_32) refers to dma.o(i.DMA_Enable) for DMA_Enable
+    dma_driver.o(i.DMA_Start_TransferM2M_32) refers to dma.o(i.DMA_Channel_Enable) for DMA_Channel_Enable
+    dma_driver.o(i.DMA_Start_TransferM2M_32) refers to dma_driver.o(.bss) for dmaConfigStr
+    adc_driver.o(i.ADC_Init) refers to delay_driver.o(i.Cnt_Delay_ms) for Cnt_Delay_ms
+    adc_driver.o(i.ADC_Init) refers to fadc.o(i.FADC_SPI_WriteSingle) for FADC_SPI_WriteSingle
+    adc_driver.o(i.ADC_Init) refers to gpio.o(i.GPIO_AE_Ctrl) for GPIO_AE_Ctrl
+    sysclk_driver.o(i.SYS_CLK_HRC_Init) refers to system_sky32b750.o(i.Set_HRC) for Set_HRC
+    sysclk_driver.o(i.SYS_CLK_HRC_Init) refers to system_sky32b750.o(i.Set_SysClk_Div) for Set_SysClk_Div
+    sysclk_driver.o(i.SYS_CLK_HRC_Init) refers to system_sky32b750.o(i.HXTAL_Caliber_LRC) for HXTAL_Caliber_LRC
+    sysclk_driver.o(i.SYS_CLK_HRC_Init) refers to system_sky32b750.o(i.LRC_Caliber_HRC) for LRC_Caliber_HRC
+    sysclk_driver.o(i.SYS_CLK_HRC_Init) refers to system_sky32b750.o(i.HRC_System_Clock_Update) for HRC_System_Clock_Update
+    sysclk_driver.o(i.SYS_CLK_PLL_Init) refers to system_sky32b750.o(i.Set_Flash_WS) for Set_Flash_WS
+    sysclk_driver.o(i.SYS_CLK_PLL_Init) refers to system_sky32b750.o(i.Set_PLL) for Set_PLL
+    sysclk_driver.o(i.SYS_CLK_PLL_Init) refers to delay_driver.o(i.Cnt_Delay_ms) for Cnt_Delay_ms
+    sysclk_driver.o(i.SYS_CLK_PLL_Init) refers to system_sky32b750.o(i.Set_SysClk_Div) for Set_SysClk_Div
+    sysclk_driver.o(i.SYS_CLK_PLL_Init) refers to system_sky32b750.o(i.PLL_System_Clock_Update) for PLL_System_Clock_Update
+    wdt_driver.o(i.Close_Wdt) refers to wdt.o(i.WDT_Disable) for WDT_Disable
+    ospi_driver.o(i.OSPI0_IRQHandler) refers to ospi_driver.o(.data) for int_sta
+    ospi_driver.o(i.OSPI1_IRQHandler) refers to ospi_driver.o(.data) for int_sta
+    ospi_driver.o(i.OSPI_MasterInit) refers to memseta.o(.text) for __aeabi_memclr4
+    ospi_driver.o(i.OSPI_MasterInit) refers to pinmux.o(i.PinMux_Set) for PinMux_Set
+    ospi_driver.o(i.OSPI_MasterInit) refers to dma.o(i.DMA_Disable) for DMA_Disable
+    ospi_driver.o(i.OSPI_MasterInit) refers to dma.o(i.DMA_Channel_Configure) for DMA_Channel_Configure
+    ospi_driver.o(i.OSPI_MasterInit) refers to ospi_driver.o(i.ospi0_dma_callback) for ospi0_dma_callback
+    ospi_driver.o(i.OSPI_MasterInit) refers to ospi_driver.o(i.test_dma_callback2) for test_dma_callback2
+    ospi_driver.o(i.OSPI_RecDMA64) refers to dma.o(i.DMA_Channel_Enable) for DMA_Channel_Enable
+    ospi_driver.o(i.OSPI_SlaveInit) refers to memseta.o(.text) for __aeabi_memclr4
+    ospi_driver.o(i.OSPI_SlaveInit) refers to pinmux.o(i.PinMux_Set) for PinMux_Set
+    ospi_driver.o(i.OSPI_SlaveInit) refers to dma.o(i.DMA_Disable) for DMA_Disable
+    ospi_driver.o(i.OSPI_SlaveInit) refers to dma.o(i.DMA_Channel_Configure) for DMA_Channel_Configure
+    ospi_driver.o(i.OSPI_SlaveInit) refers to ospi_driver.o(i.ospi1_dma_callback) for ospi1_dma_callback
+    ospi_driver.o(i.OSPI_Trans64) refers to delay_driver.o(i.Cnt_Delay_us) for Cnt_Delay_us
+    ospi_driver.o(i.OSPI_TransDMA64) refers to dma.o(i.DMA_Channel_Enable) for DMA_Channel_Enable
+    main.o(i.ObjectProcess) refers to main.o(.data) for Objwei
+    main.o(i.ObjectProcess) refers to app_func.o(.data) for frameRst
+    main.o(i.ObjectProcess) refers to main.o(.bss) for gstSysPara
+    main.o(i.Sys_CalcVeloFftPt) refers to main.o(.bss) for gstSysPara
+    main.o(i.Sys_Init) refers to system_sky32b750.o(i.Set_Flash_WS) for Set_Flash_WS
+    main.o(i.Sys_Init) refers to system_sky32b750.o(i.Set_SysClk_Div) for Set_SysClk_Div
+    main.o(i.Sys_Init) refers to system_sky32b750.o(i.HRC_System_Clock_Update) for HRC_System_Clock_Update
+    main.o(i.Sys_Init) refers to system_sky32b750.o(i.Set_CanClk_Div) for Set_CanClk_Div
+    main.o(i.Sys_Init) refers to gpio_driver.o(i.GPIO_Init) for GPIO_Init
+    main.o(i.Sys_Init) refers to spi_driver.o(i.SPI_Init) for SPI_Init
+    main.o(i.Sys_Init) refers to sysclk_driver.o(i.SYS_CLK_HRC_Init) for SYS_CLK_HRC_Init
+    main.o(i.Sys_Init) refers to sysclk_driver.o(i.SYS_CLK_PLL_Init) for SYS_CLK_PLL_Init
+    main.o(i.Sys_Init) refers to adc_driver.o(i.ADC_Init) for ADC_Init
+    main.o(i.Sys_Init) refers to main.o(i.Sys_CalcVeloFftPt) for Sys_CalcVeloFftPt
+    main.o(i.Sys_Init) refers to main.o(.bss) for gstSysPara
+    main.o(i.Sys_SelfCheck) refers to product.o(i.Prod_SelfCheckK101W) for Prod_SelfCheckK101W
+    main.o(i.Sys_SelfCheck) refers to main.o(.bss) for gstSysPara
+    main.o(i.main) refers to main.o(i.Sys_Init) for Sys_Init
+    main.o(i.main) refers to paramconfig.o(i.ParamConfigInit) for ParamConfigInit
+    main.o(i.main) refers to mpu_driver.o(i.MPU_LocalConfig) for MPU_LocalConfig
+    main.o(i.main) refers to usart_driver.o(i.USART_Init) for USART_Init
+    main.o(i.main) refers to app_func.o(i.mmWave_Init) for mmWave_Init
+    main.o(i.main) refers to main.o(i.Sys_SelfCheck) for Sys_SelfCheck
+    main.o(i.main) refers to usart_protocol.o(i.XFProtocol_Analysis_Handle) for XFProtocol_Analysis_Handle
+    main.o(i.main) refers to app_func.o(i.mmWave_Process) for mmWave_Process
+    main.o(i.main) refers to main.o(.data) for InitState
+    main.o(i.main) refers to main.o(.bss) for Target_result
+    rf_spi_config.o(i.RF1_SPI_Init) refers to rf_spi_config.o(i.rc6011_init_chip1) for rc6011_init_chip1
+    rf_spi_config.o(i.RF2_SPI_Init) refers to rf_spi_config.o(i.rc6011_init_chip2) for rc6011_init_chip2
+    rf_spi_config.o(i.RF_CHIP1_Disable) refers to rf_spi_config.o(i.waveGenStop1) for waveGenStop1
+    rf_spi_config.o(i.RF_CHIP1_Disable) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.RF_CHIP2_Disable) refers to rf_spi_config.o(i.waveGenStop2) for waveGenStop2
+    rf_spi_config.o(i.RF_CHIP2_Disable) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.RF_CHIPEN) refers to delay.o(i.HW_Delay_ms) for HW_Delay_ms
+    rf_spi_config.o(i.RF_CHIPEN_Disable) refers to rf_spi_config.o(i.waveGenStop) for waveGenStop
+    rf_spi_config.o(i.RF_CHIPEN_Disable) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.RF_CLOSE) refers to delay.o(i.HW_Delay_ms) for HW_Delay_ms
+    rf_spi_config.o(i.RF_Clock40M_En) refers to rf_spi_config.o(i.RF_CHIPEN) for RF_CHIPEN
+    rf_spi_config.o(i.RF_PA_FASTSW) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.RF_SPI_Init) refers to rf_spi_config.o(i.rc6011_init_chip1) for rc6011_init_chip1
+    rf_spi_config.o(i.RF_WaveSet) refers to spi_driver.o(i.RF_WriteWaveSPI) for RF_WriteWaveSPI
+    rf_spi_config.o(i.rc6011_init_chip1) refers to rf_spi_config.o(i.__NVIC_DisableIRQ) for __NVIC_DisableIRQ
+    rf_spi_config.o(i.rc6011_init_chip1) refers to rf_spi_config.o(i.waveGenClear_RF1) for waveGenClear_RF1
+    rf_spi_config.o(i.rc6011_init_chip1) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.rc6011_init_chip1) refers to rf_spi_config.o(i.RF_WaveSet) for RF_WaveSet
+    rf_spi_config.o(i.rc6011_init_chip1) refers to rf_spi_config.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    rf_spi_config.o(i.rc6011_init_chip1_2) refers to rf_spi_config.o(i.__NVIC_DisableIRQ) for __NVIC_DisableIRQ
+    rf_spi_config.o(i.rc6011_init_chip1_2) refers to rf_spi_config.o(i.waveGenClear_RF2) for waveGenClear_RF2
+    rf_spi_config.o(i.rc6011_init_chip1_2) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.rc6011_init_chip1_2) refers to rf_spi_config.o(i.RF_WaveSet) for RF_WaveSet
+    rf_spi_config.o(i.rc6011_init_chip1_2) refers to rf_spi_config.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    rf_spi_config.o(i.rc6011_init_chip2) refers to rf_spi_config.o(i.__NVIC_DisableIRQ) for __NVIC_DisableIRQ
+    rf_spi_config.o(i.rc6011_init_chip2) refers to rf_spi_config.o(i.waveGenClear_RF2) for waveGenClear_RF2
+    rf_spi_config.o(i.rc6011_init_chip2) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.rc6011_init_chip2) refers to rf_spi_config.o(i.RF_WaveSet) for RF_WaveSet
+    rf_spi_config.o(i.rc6011_init_chip2) refers to rf_spi_config.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    rf_spi_config.o(i.tmp_regconfig) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.tmp_regconfig) refers to spi_driver.o(i.RF_ReadRegSPI) for RF_ReadRegSPI
+    rf_spi_config.o(i.tmp_regconfig) refers to rf_spi_config.o(i.RF_WaveSet) for RF_WaveSet
+    rf_spi_config.o(i.tmp_regconfig1) refers to spi_driver.o(i.RF_WriteRegSPI_Fast) for RF_WriteRegSPI_Fast
+    rf_spi_config.o(i.tmp_regconfig1) refers to spi_driver.o(i.RF_ReadRegSPI) for RF_ReadRegSPI
+    rf_spi_config.o(i.tmp_regconfig1) refers to rf_spi_config.o(i.RF_WaveSet) for RF_WaveSet
+    rf_spi_config.o(i.waveGenClear_RF1) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    rf_spi_config.o(i.waveGenClear_RF2) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    rf_spi_config.o(i.waveGenStart) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    rf_spi_config.o(i.waveGenStart1) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    rf_spi_config.o(i.waveGenStart2) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    rf_spi_config.o(i.waveGenStop) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    rf_spi_config.o(i.waveGenStop1) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    rf_spi_config.o(i.waveGenStop2) refers to spi_driver.o(i.RF_WriteCmdSPI) for RF_WriteCmdSPI
+    bb_config.o(i.BB_CFAR_CFG0) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_CFAR_Init) refers to bb_config.o(i.BB_CFAR_CFG0) for BB_CFAR_CFG0
+    bb_config.o(i.BB_CFAR_Init) refers to bb_config.o(.bss) for cfarCfg0_st
+    bb_config.o(i.BB_CFAR_Init) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_CpxFix2pf) refers to bb_config.o(i.BB_waitISR) for BB_waitISR
+    bb_config.o(i.BB_CpxFix2pf) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_CpxFlt2pf_long) refers to bb_config.o(i.BB_waitISR) for BB_waitISR
+    bb_config.o(i.BB_CpxFlt2pf_long) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_CpxFlt2pf_short) refers to bb_config.o(i.BB_waitISR) for BB_waitISR
+    bb_config.o(i.BB_CpxFlt2pf_short) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_FFT2D_ZP_Init) refers to llshl.o(.text) for __aeabi_llsl
+    bb_config.o(i.BB_FFT2D_ZP_Init) refers to main.o(.bss) for gstSysPara
+    bb_config.o(i.BB_FFT2D_ZP_Init) refers to bb_config.o(.bss) for fft2d_zp
+    bb_config.o(i.BB_FFT_ZP_Clear) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_IRQ_Init) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_PrepConfig) refers to main.o(.bss) for gstSysPara
+    bb_config.o(i.BB_PrepConfig) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_PrepConfig_chip2) refers to main.o(.bss) for gstSysPara
+    bb_config.o(i.BB_PrepConfig_chip2) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_RANG_CFAR_CONFIG) refers to bb_config.o(i.BB_CFAR_CFG0) for BB_CFAR_CFG0
+    bb_config.o(i.BB_RANG_CFAR_CONFIG) refers to bb_config.o(.bss) for cfarCfg0_st
+    bb_config.o(i.BB_RANG_CFAR_CONFIG) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_VEL_CFAR_CONFIG) refers to bb_config.o(i.BB_CFAR_CFG0) for BB_CFAR_CFG0
+    bb_config.o(i.BB_VEL_CFAR_CONFIG) refers to bb_config.o(.bss) for cfarCfg0_st
+    bb_config.o(i.BB_VEL_CFAR_CONFIG) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_waitESR) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.BB_waitISR) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.Chip1_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_IRQ_Init) for BB_IRQ_Init
+    bb_config.o(i.Chip1_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_FFT2D_ZP_Init) for BB_FFT2D_ZP_Init
+    bb_config.o(i.Chip1_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_WBUF_W32) for BB_WBUF_W32
+    bb_config.o(i.Chip1_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_WBUF_W16) for BB_WBUF_W16
+    bb_config.o(i.Chip1_BB_Doppler_PrepConfig) refers to main.o(.bss) for gstSysPara
+    bb_config.o(i.Chip1_BB_Doppler_PrepConfig) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.Chip1_BB_Doppler_PrepConfig) refers to app_func.o(.constdata) for calib_ap_Pre
+    bb_config.o(i.Chip1_BB_PrepConfig) refers to bb_config.o(i.BB_IRQ_Init) for BB_IRQ_Init
+    bb_config.o(i.Chip1_BB_PrepConfig) refers to bb_config.o(i.BB_FFT2D_ZP_Init) for BB_FFT2D_ZP_Init
+    bb_config.o(i.Chip1_BB_PrepConfig) refers to bb_config.o(i.BB_WBUF_W32) for BB_WBUF_W32
+    bb_config.o(i.Chip1_BB_PrepConfig) refers to bb_config.o(i.BB_WBUF_W16) for BB_WBUF_W16
+    bb_config.o(i.Chip1_BB_PrepConfig) refers to main.o(.bss) for gstSysPara
+    bb_config.o(i.Chip1_BB_PrepConfig) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.Chip1_BB_PrepConfig) refers to app_func.o(.constdata) for calib_ap_Pre
+    bb_config.o(i.Chip2_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_IRQ_Init) for BB_IRQ_Init
+    bb_config.o(i.Chip2_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_FFT2D_ZP_Init) for BB_FFT2D_ZP_Init
+    bb_config.o(i.Chip2_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_WBUF_W32) for BB_WBUF_W32
+    bb_config.o(i.Chip2_BB_Doppler_PrepConfig) refers to bb_config.o(i.BB_WBUF_W16) for BB_WBUF_W16
+    bb_config.o(i.Chip2_BB_Doppler_PrepConfig) refers to main.o(.bss) for gstSysPara
+    bb_config.o(i.Chip2_BB_Doppler_PrepConfig) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.Chip2_BB_Doppler_PrepConfig) refers to app_func.o(.constdata) for calib_ap_Pre
+    bb_config.o(i.Chip2_BB_PrepConfig) refers to bb_config.o(i.BB_IRQ_Init) for BB_IRQ_Init
+    bb_config.o(i.Chip2_BB_PrepConfig) refers to bb_config.o(i.BB_FFT2D_ZP_Init) for BB_FFT2D_ZP_Init
+    bb_config.o(i.Chip2_BB_PrepConfig) refers to bb_config.o(i.BB_WBUF_W32) for BB_WBUF_W32
+    bb_config.o(i.Chip2_BB_PrepConfig) refers to bb_config.o(i.BB_WBUF_W16) for BB_WBUF_W16
+    bb_config.o(i.Chip2_BB_PrepConfig) refers to main.o(.bss) for gstSysPara
+    bb_config.o(i.Chip2_BB_PrepConfig) refers to bb_config.o(.data) for bb_regb_str
+    bb_config.o(i.Chip2_BB_PrepConfig) refers to app_func.o(.constdata) for calib_ap_Pre
+    usart_protocol.o(i.XFProtocol_Analysis_Handle) refers to product.o(i.Prod_CommHandleK101W) for Prod_CommHandleK101W
+    usart_protocol.o(i.XFProtocol_Analysis_Handle) refers to usart_driver.o(.bss) for strUsart
+    usart_protocol.o(i.XFProtocol_Analysis_Handle) refers to main.o(.bss) for gstSysPara
+    paramconfig.o(i.Default_Param_Config) refers to paramconfig.o(.bss) for r2_str
+    paramconfig.o(i.Get_Effective_Param) refers to paramconfig.o(i.Read_Param_From_Flash) for Read_Param_From_Flash
+    paramconfig.o(i.Get_Effective_Param) refers to paramconfig.o(i.Default_Param_Config) for Default_Param_Config
+    paramconfig.o(i.Get_Effective_Param) refers to paramconfig.o(i.Save_Param_Config) for Save_Param_Config
+    paramconfig.o(i.Get_Effective_Param) refers to paramconfig.o(.bss) for r2_str
+    paramconfig.o(i.ParamConfigInit) refers to memseta.o(.text) for __aeabi_memclr4
+    paramconfig.o(i.ParamConfigInit) refers to paramconfig.o(i.ResolutionCount) for ResolutionCount
+    paramconfig.o(i.ParamConfigInit) refers to paramconfig.o(i.Get_Effective_Param) for Get_Effective_Param
+    paramconfig.o(i.ParamConfigInit) refers to paramconfig.o(.bss) for r2_str
+    paramconfig.o(i.Printf_Param) refers to printfa.o(i.__0printf) for __2printf
+    paramconfig.o(i.Printf_Param) refers to f2d.o(.text) for __aeabi_f2d
+    paramconfig.o(i.Printf_Param) refers to paramconfig.o(.bss) for r2_str
+    paramconfig.o(i.Read_Param_From_Flash) refers to paramconfig.o(.bss) for r2_str
+    paramconfig.o(i.ResolutionCount) refers to dfltui.o(.text) for __aeabi_ui2d
+    paramconfig.o(i.ResolutionCount) refers to dmul.o(.text) for __aeabi_dmul
+    paramconfig.o(i.ResolutionCount) refers to ddiv.o(.text) for __aeabi_ddiv
+    paramconfig.o(i.ResolutionCount) refers to d2f.o(.text) for __aeabi_d2f
+    paramconfig.o(i.ResolutionCount) refers to paramconfig.o(.bss) for r2_str
+    paramconfig.o(i.ResolutionCount) refers to main.o(.bss) for gstSysPara
+    paramconfig.o(i.Save_Param_Config) refers to usart_protocol.o(i.Word2Byte) for Word2Byte
+    paramconfig.o(i.Save_Param_Config) refers to efc.o(i.EFC_ReWrite) for EFC_ReWrite
+    paramconfig.o(i.Save_Param_Config) refers to paramconfig.o(.bss) for r2_str
+    led.o(i.StartSignalDetect) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    led.o(i.StartSignalDetect) refers to led.o(i.Cnt_Delay) for Cnt_Delay
+    led.o(i.TMRA_IRQHandler) refers to led.o(.data) for time_it_falg
+    product.o(i.Prod_CalcFireHeight) refers to dfltui.o(.text) for __aeabi_ui2d
+    product.o(i.Prod_CalcFireHeight) refers to ddiv.o(.text) for __aeabi_ddiv
+    product.o(i.Prod_CalcFireHeight) refers to dadd.o(.text) for __aeabi_dadd
+    product.o(i.Prod_CalcFireHeight) refers to dfixui.o(.text) for __aeabi_d2uiz
+    product.o(i.Prod_CommHandleK101W) refers to usart_protocol.o(i.getBcc) for getBcc
+    product.o(i.Prod_CommHandleK101W) refers to usart_protocol.o(i.Word2Byte) for Word2Byte
+    product.o(i.Prod_CommHandleK101W) refers to product.o(i.Prod_CalcFireHeight) for Prod_CalcFireHeight
+    product.o(i.Prod_CommHandleK101W) refers to usart_driver.o(i.USART_Transmit_Bytes) for USART_Transmit_Bytes
+    product.o(i.Prod_CommHandleK101W) refers to product.o(i.Prod_SendPeriodicMsgK101W) for Prod_SendPeriodicMsgK101W
+    product.o(i.Prod_CommHandleK101W) refers to main.o(.data) for ucFireSignal
+    product.o(i.Prod_CommHandleK101W) refers to main.o(.bss) for gstSysPara
+    product.o(i.Prod_CommHandleK101W) refers to product.o(.data) for TargetFreSend
+    product.o(i.Prod_CommHandleK101W) refers to usart_driver.o(.bss) for USART0
+    product.o(i.Prod_SelfCheckK101W) refers to product.o(i.Prod_CalcFireHeight) for Prod_CalcFireHeight
+    product.o(i.Prod_SelfCheckK101W) refers to usart_protocol.o(i.getBcc) for getBcc
+    product.o(i.Prod_SelfCheckK101W) refers to usart_driver.o(i.USART_Transmit_Bytes) for USART_Transmit_Bytes
+    product.o(i.Prod_SelfCheckK101W) refers to delay_driver.o(i.Cnt_Delay_ms) for Cnt_Delay_ms
+    product.o(i.Prod_SelfCheckK101W) refers to main.o(.bss) for gstSysPara
+    product.o(i.Prod_SelfCheckK101W) refers to usart_driver.o(.bss) for USART0
+    product.o(i.Prod_SendFireMsgK101W) refers to product.o(i.Prod_CalcRptHeight) for Prod_CalcRptHeight
+    product.o(i.Prod_SendFireMsgK101W) refers to usart_protocol.o(i.getBcc) for getBcc
+    product.o(i.Prod_SendFireMsgK101W) refers to usart_driver.o(i.USART_Transmit_Bytes) for USART_Transmit_Bytes
+    product.o(i.Prod_SendFireMsgK101W) refers to usart_driver.o(.bss) for USART0
+    product.o(i.Prod_SendPeriodicMsgK101W) refers to usart_protocol.o(i.getBcc) for getBcc
+    product.o(i.Prod_SendPeriodicMsgK101W) refers to usart_driver.o(i.USART_Transmit_Bytes) for USART_Transmit_Bytes
+    product.o(i.Prod_SendPeriodicMsgK101W) refers to usart_driver.o(.bss) for USART0
+    app_func.o(i.BB_Init) refers to bb_config.o(i.BB_IRQ_Init) for BB_IRQ_Init
+    app_func.o(i.BB_Init) refers to bb_config.o(i.BB_PrepConfig) for BB_PrepConfig
+    app_func.o(i.BB_Init) refers to bb_config.o(i.BB_FFT2D_ZP_Init) for BB_FFT2D_ZP_Init
+    app_func.o(i.BB_Init) refers to bb_config.o(i.BB_WBUF_W32) for BB_WBUF_W32
+    app_func.o(i.BB_Init) refers to bb_config.o(i.BB_WBUF_W16) for BB_WBUF_W16
+    app_func.o(i.BB_Init) refers to bb_config.o(.bss) for bb_prep
+    app_func.o(i.BB_Init) refers to bb_config.o(.data) for bb_regb_str
+    app_func.o(i.BB_Init) refers to main.o(.bss) for gstSysPara
+    app_func.o(i.BB_Init) refers to app_func.o(.constdata) for calib_ap_Pre
+    app_func.o(i.Func_Init) refers to rf_spi_config.o(i.RF_CHIPEN_Disable) for RF_CHIPEN_Disable
+    app_func.o(i.Func_Init) refers to app_func.o(i.BB_Init) for BB_Init
+    app_func.o(i.MmwDemo_cfarPeakGroupingCfarQualified) refers to memseta.o(.text) for __aeabi_memclr4
+    app_func.o(i.Target2D_Process) refers to app_func.o(i.mmWave_BbPrep) for mmWave_BbPrep
+    app_func.o(i.Target2D_Process) refers to app_func.o(i.mmWave_FftRange) for mmWave_FftRange
+    app_func.o(i.Target2D_Process) refers to app_func.o(i.mmWave_FftVelocity) for mmWave_FftVelocity
+    app_func.o(i.Target2D_Process) refers to app_func.o(i.mmWave_CfarVelocity) for mmWave_CfarVelocity
+    app_func.o(i.Target2D_Process) refers to app_func.o(i.mmWave_CfarRange) for mmWave_CfarRange
+    app_func.o(i.Target2D_Process) refers to app_func.o(i.mmWave_TargetProc) for mmWave_TargetProc
+    app_func.o(i.mmWave_BbPrep) refers to adc_driver.o(i.Chip1_ADC_Init) for Chip1_ADC_Init
+    app_func.o(i.mmWave_BbPrep) refers to bb_config.o(i.Chip1_BB_PrepConfig) for Chip1_BB_PrepConfig
+    app_func.o(i.mmWave_BbPrep) refers to rf_spi_config.o(i.rc6011_init_chip1) for rc6011_init_chip1
+    app_func.o(i.mmWave_BbPrep) refers to rf_spi_config.o(i.waveGenStart1) for waveGenStart1
+    app_func.o(i.mmWave_BbPrep) refers to rf_spi_config.o(i.RF_CHIP1_Disable) for RF_CHIP1_Disable
+    app_func.o(i.mmWave_BbPrep) refers to bb_config.o(.data) for bb_regb_str
+    app_func.o(i.mmWave_BbPrep) refers to bb_config.o(.bss) for bb_prep
+    app_func.o(i.mmWave_CfarRange) refers to bb_config.o(i.BB_RANG_CFAR_CONFIG) for BB_RANG_CFAR_CONFIG
+    app_func.o(i.mmWave_CfarRange) refers to bb_config.o(i.BB_waitISR) for BB_waitISR
+    app_func.o(i.mmWave_CfarRange) refers to llshl.o(.text) for __aeabi_llsl
+    app_func.o(i.mmWave_CfarRange) refers to memseta.o(.text) for __aeabi_memclr4
+    app_func.o(i.mmWave_CfarRange) refers to bb_config.o(.data) for bb_regb_str
+    app_func.o(i.mmWave_CfarRange) refers to app_func.o(.data) for cfarCollectTargetNum
+    app_func.o(i.mmWave_CfarRange) refers to app_func.o(.bss) for AntObjNumer
+    app_func.o(i.mmWave_CfarVelocity) refers to bb_config.o(i.BB_VEL_CFAR_CONFIG) for BB_VEL_CFAR_CONFIG
+    app_func.o(i.mmWave_CfarVelocity) refers to bb_config.o(i.BB_waitISR) for BB_waitISR
+    app_func.o(i.mmWave_CfarVelocity) refers to llshl.o(.text) for __aeabi_llsl
+    app_func.o(i.mmWave_CfarVelocity) refers to memseta.o(.text) for __aeabi_memclr4
+    app_func.o(i.mmWave_CfarVelocity) refers to memcpya.o(.text) for __aeabi_memcpy
+    app_func.o(i.mmWave_CfarVelocity) refers to bb_config.o(.data) for bb_regb_str
+    app_func.o(i.mmWave_CfarVelocity) refers to app_func.o(.data) for cfarTargetNum
+    app_func.o(i.mmWave_CfarVelocity) refers to app_func.o(.bss) for VcfarRangeTarget
+    app_func.o(i.mmWave_CfarVelocity) refers to main.o(.bss) for gstSysPara
+    app_func.o(i.mmWave_CfarVelocity) refers to bb_config.o(.bss) for bb_prep
+    app_func.o(i.mmWave_FftRange) refers to bb_config.o(i.BB_FFT_ZP_Clear) for BB_FFT_ZP_Clear
+    app_func.o(i.mmWave_FftRange) refers to bb_config.o(i.BB_waitISR) for BB_waitISR
+    app_func.o(i.mmWave_FftRange) refers to bb_config.o(.data) for bb_regb_str
+    app_func.o(i.mmWave_FftRange) refers to main.o(.bss) for gstSysPara
+    app_func.o(i.mmWave_FftRange) refers to app_func.o(.constdata) for nco_fcw
+    app_func.o(i.mmWave_FftRange) refers to bb_config.o(.bss) for bb_prep
+    app_func.o(i.mmWave_FftVelocity) refers to bb_config.o(i.BB_FFT_ZP_Clear) for BB_FFT_ZP_Clear
+    app_func.o(i.mmWave_FftVelocity) refers to bb_config.o(i.BB_waitISR) for BB_waitISR
+    app_func.o(i.mmWave_FftVelocity) refers to bb_config.o(.data) for bb_regb_str
+    app_func.o(i.mmWave_FftVelocity) refers to main.o(.bss) for gstSysPara
+    app_func.o(i.mmWave_FftVelocity) refers to bb_config.o(.bss) for bb_prep
+    app_func.o(i.mmWave_FireProc) refers to dfltui.o(.text) for __aeabi_ui2d
+    app_func.o(i.mmWave_FireProc) refers to dmul.o(.text) for __aeabi_dmul
+    app_func.o(i.mmWave_FireProc) refers to dfixui.o(.text) for __aeabi_d2uiz
+    app_func.o(i.mmWave_FireProc) refers to product.o(i.Prod_SendFireMsgK101W) for Prod_SendFireMsgK101W
+    app_func.o(i.mmWave_FireProc) refers to product.o(i.Prod_SendPeriodicMsgK101W) for Prod_SendPeriodicMsgK101W
+    app_func.o(i.mmWave_FireProc) refers to main.o(.bss) for Target_result
+    app_func.o(i.mmWave_FireProc) refers to main.o(.data) for ucFireSignal
+    app_func.o(i.mmWave_Init) refers to rf_spi_config.o(i.RF_Clock40M_En) for RF_Clock40M_En
+    app_func.o(i.mmWave_Init) refers to app_func.o(i.Func_Init) for Func_Init
+    app_func.o(i.mmWave_Init) refers to spi_driver.o(i.RF_ReadRegSPI) for RF_ReadRegSPI
+    app_func.o(i.mmWave_Process) refers to app_func.o(i.Target2D_Process) for Target2D_Process
+    app_func.o(i.mmWave_Process) refers to memseta.o(.text) for __aeabi_memset
+    app_func.o(i.mmWave_Process) refers to app_func.o(i.mmWave_FireProc) for mmWave_FireProc
+    app_func.o(i.mmWave_Process) refers to app_func.o(.bss) for ChosenOne
+    app_func.o(i.mmWave_Process) refers to app_func.o(.data) for AccTime
+    app_func.o(i.mmWave_TargetProc) refers to memseta.o(.text) for __aeabi_memclr4
+    app_func.o(i.mmWave_TargetProc) refers to app_func.o(i.MmwDemo_cfarPeakGroupingCfarQualified) for MmwDemo_cfarPeakGroupingCfarQualified
+    app_func.o(i.mmWave_TargetProc) refers to app_func.o(.constdata) for .constdata
+    app_func.o(i.mmWave_TargetProc) refers to app_func.o(.data) for Groupresult
+    app_func.o(i.mmWave_TargetProc) refers to app_func.o(.bss) for AntObjNumer
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    printfb.o(i.__0fprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0fprintf$bare) refers to usart_driver.o(i.fputc) for fputc
+    printfb.o(i.__0printf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0printf$bare) refers to usart_driver.o(i.fputc) for fputc
+    printfb.o(i.__0printf$bare) refers to usart_driver.o(.data) for __stdout
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printfb.o(i.__0vfprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vfprintf$bare) refers to usart_driver.o(i.fputc) for fputc
+    printfb.o(i.__0vprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vprintf$bare) refers to usart_driver.o(i.fputc) for fputc
+    printfb.o(i.__0vprintf$bare) refers to usart_driver.o(.data) for __stdout
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printf0.o(i.__0fprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0fprintf$0) refers to usart_driver.o(i.fputc) for fputc
+    printf0.o(i.__0printf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0printf$0) refers to usart_driver.o(i.fputc) for fputc
+    printf0.o(i.__0printf$0) refers to usart_driver.o(.data) for __stdout
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf0.o(i.__0vfprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vfprintf$0) refers to usart_driver.o(i.fputc) for fputc
+    printf0.o(i.__0vprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vprintf$0) refers to usart_driver.o(i.fputc) for fputc
+    printf0.o(i.__0vprintf$0) refers to usart_driver.o(.data) for __stdout
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf1.o(i.__0fprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0fprintf$1) refers to usart_driver.o(i.fputc) for fputc
+    printf1.o(i.__0printf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0printf$1) refers to usart_driver.o(i.fputc) for fputc
+    printf1.o(i.__0printf$1) refers to usart_driver.o(.data) for __stdout
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i.__0vfprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vfprintf$1) refers to usart_driver.o(i.fputc) for fputc
+    printf1.o(i.__0vprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vprintf$1) refers to usart_driver.o(i.fputc) for fputc
+    printf1.o(i.__0vprintf$1) refers to usart_driver.o(.data) for __stdout
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf2.o(i.__0fprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0fprintf$2) refers to usart_driver.o(i.fputc) for fputc
+    printf2.o(i.__0printf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0printf$2) refers to usart_driver.o(i.fputc) for fputc
+    printf2.o(i.__0printf$2) refers to usart_driver.o(.data) for __stdout
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf2.o(i.__0vfprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vfprintf$2) refers to usart_driver.o(i.fputc) for fputc
+    printf2.o(i.__0vprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vprintf$2) refers to usart_driver.o(i.fputc) for fputc
+    printf2.o(i.__0vprintf$2) refers to usart_driver.o(.data) for __stdout
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf3.o(i.__0fprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0fprintf$3) refers to usart_driver.o(i.fputc) for fputc
+    printf3.o(i.__0printf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0printf$3) refers to usart_driver.o(i.fputc) for fputc
+    printf3.o(i.__0printf$3) refers to usart_driver.o(.data) for __stdout
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i.__0vfprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vfprintf$3) refers to usart_driver.o(i.fputc) for fputc
+    printf3.o(i.__0vprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vprintf$3) refers to usart_driver.o(i.fputc) for fputc
+    printf3.o(i.__0vprintf$3) refers to usart_driver.o(.data) for __stdout
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf4.o(i.__0fprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0fprintf$4) refers to usart_driver.o(i.fputc) for fputc
+    printf4.o(i.__0printf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0printf$4) refers to usart_driver.o(i.fputc) for fputc
+    printf4.o(i.__0printf$4) refers to usart_driver.o(.data) for __stdout
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i.__0vfprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vfprintf$4) refers to usart_driver.o(i.fputc) for fputc
+    printf4.o(i.__0vprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vprintf$4) refers to usart_driver.o(i.fputc) for fputc
+    printf4.o(i.__0vprintf$4) refers to usart_driver.o(.data) for __stdout
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf5.o(i.__0fprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0fprintf$5) refers to usart_driver.o(i.fputc) for fputc
+    printf5.o(i.__0printf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0printf$5) refers to usart_driver.o(i.fputc) for fputc
+    printf5.o(i.__0printf$5) refers to usart_driver.o(.data) for __stdout
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i.__0vfprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vfprintf$5) refers to usart_driver.o(i.fputc) for fputc
+    printf5.o(i.__0vprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vprintf$5) refers to usart_driver.o(i.fputc) for fputc
+    printf5.o(i.__0vprintf$5) refers to usart_driver.o(.data) for __stdout
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf6.o(i.__0fprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0fprintf$6) refers to usart_driver.o(i.fputc) for fputc
+    printf6.o(i.__0printf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0printf$6) refers to usart_driver.o(i.fputc) for fputc
+    printf6.o(i.__0printf$6) refers to usart_driver.o(.data) for __stdout
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i.__0vfprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vfprintf$6) refers to usart_driver.o(i.fputc) for fputc
+    printf6.o(i.__0vprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vprintf$6) refers to usart_driver.o(i.fputc) for fputc
+    printf6.o(i.__0vprintf$6) refers to usart_driver.o(.data) for __stdout
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_pre_padding) for _printf_pre_padding
+    printf6.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_post_padding) for _printf_post_padding
+    printf7.o(i.__0fprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0fprintf$7) refers to usart_driver.o(i.fputc) for fputc
+    printf7.o(i.__0printf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0printf$7) refers to usart_driver.o(i.fputc) for fputc
+    printf7.o(i.__0printf$7) refers to usart_driver.o(.data) for __stdout
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i.__0vfprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vfprintf$7) refers to usart_driver.o(i.fputc) for fputc
+    printf7.o(i.__0vprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vprintf$7) refers to usart_driver.o(i.fputc) for fputc
+    printf7.o(i.__0vprintf$7) refers to usart_driver.o(.data) for __stdout
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_pre_padding) for _printf_pre_padding
+    printf7.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_post_padding) for _printf_post_padding
+    printf8.o(i.__0fprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0fprintf$8) refers to usart_driver.o(i.fputc) for fputc
+    printf8.o(i.__0printf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0printf$8) refers to usart_driver.o(i.fputc) for fputc
+    printf8.o(i.__0printf$8) refers to usart_driver.o(.data) for __stdout
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i.__0vfprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vfprintf$8) refers to usart_driver.o(i.fputc) for fputc
+    printf8.o(i.__0vprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vprintf$8) refers to usart_driver.o(i.fputc) for fputc
+    printf8.o(i.__0vprintf$8) refers to usart_driver.o(.data) for __stdout
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_pre_padding) for _printf_pre_padding
+    printf8.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0fprintf) refers to usart_driver.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0printf) refers to usart_driver.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers to usart_driver.o(.data) for __stdout
+    printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0snprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0sprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0sprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vfprintf) refers to usart_driver.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vprintf) refers to usart_driver.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers to usart_driver.o(.data) for __stdout
+    printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0vsprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i._fp_digits) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._fp_digits) refers to dmul.o(.text) for __aeabi_dmul
+    printfa.o(i._fp_digits) refers to ddiv.o(.text) for __aeabi_ddiv
+    printfa.o(i._fp_digits) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    printfa.o(i._fp_digits) refers to dadd.o(.text) for __aeabi_dadd
+    printfa.o(i._fp_digits) refers to dfixul.o(.text) for __aeabi_d2ulz
+    printfa.o(i._fp_digits) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_pre_padding) for _printf_pre_padding
+    printfa.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i._printf_core) refers to printfa.o(i._fp_digits) for _fp_digits
+    printfa.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfa.o(i._printf_post_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_sky32b750.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_sky32b750.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_sky32b750.o(HEAP), (512 bytes).
+    Removing system_sky32b750.o(.rev16_text), (4 bytes).
+    Removing system_sky32b750.o(.revsh_text), (4 bytes).
+    Removing system_sky32b750.o(.rrx_text), (6 bytes).
+    Removing system_sky32b750.o(i.CPU_Sleep), (20 bytes).
+    Removing system_sky32b750.o(i.Cache_Enable), (304 bytes).
+    Removing system_sky32b750.o(i.Deep_Sleep), (36 bytes).
+    Removing system_sky32b750.o(i.FPU_Disable), (100 bytes).
+    Removing system_sky32b750.o(i.Peripheral_Reset), (24 bytes).
+    Removing system_sky32b750.o(i.Power_Down), (36 bytes).
+    Removing system_sky32b750.o(i.Register_Lock), (32 bytes).
+    Removing system_sky32b750.o(i.Register_UnLock), (40 bytes).
+    Removing system_sky32b750.o(i.Set_BOR_Threshold), (24 bytes).
+    Removing system_sky32b750.o(i.Set_CoreLDO_Voltage), (24 bytes).
+    Removing system_sky32b750.o(i.Set_LPLDO_Voltage), (24 bytes).
+    Removing delay.o(.rev16_text), (4 bytes).
+    Removing delay.o(.revsh_text), (4 bytes).
+    Removing delay.o(.rrx_text), (6 bytes).
+    Removing delay.o(i.Calib_SW_ms), (88 bytes).
+    Removing delay.o(i.HW_Delay_us), (68 bytes).
+    Removing delay.o(i.SW_Delay_ms), (32 bytes).
+    Removing delay.o(i.SW_Delay_us), (22 bytes).
+    Removing delay.o(.data), (4 bytes).
+    Removing gpio.o(.rev16_text), (4 bytes).
+    Removing gpio.o(.revsh_text), (4 bytes).
+    Removing gpio.o(.rrx_text), (6 bytes).
+    Removing gpio.o(i.GPIO_DisableInt), (12 bytes).
+    Removing gpio.o(i.GPIO_EnableInt), (36 bytes).
+    Removing gpio.o(i.GPIO_OD_Ctrl), (204 bytes).
+    Removing gpio.o(i.GPIO_PullDown), (140 bytes).
+    Removing gpio.o(i.GPIO_RE_Ctrl), (204 bytes).
+    Removing mpu.o(.rev16_text), (4 bytes).
+    Removing mpu.o(.revsh_text), (4 bytes).
+    Removing mpu.o(.rrx_text), (6 bytes).
+    Removing mpu.o(i.MPU_Config), (808 bytes).
+    Removing mpu.o(i.MPU_ConfigRegion), (76 bytes).
+    Removing pinmux.o(.rev16_text), (4 bytes).
+    Removing pinmux.o(.revsh_text), (4 bytes).
+    Removing pinmux.o(.rrx_text), (6 bytes).
+    Removing usci.o(.rev16_text), (4 bytes).
+    Removing usci.o(.revsh_text), (4 bytes).
+    Removing usci.o(.rrx_text), (6 bytes).
+    Removing usci.o(i.USCI_Disable), (224 bytes).
+    Removing usci.o(i.USCI_Enable), (224 bytes).
+    Removing usci.o(i.USCI_SPI_Receive), (152 bytes).
+    Removing usci.o(i.USCI_SPI_Slave_Receive), (68 bytes).
+    Removing usci.o(i.USCI_SPI_Slave_Transmit), (88 bytes).
+    Removing usci.o(i.USCI_SPI_TRx), (92 bytes).
+    Removing usci.o(i.USCI_U7816_Cmd), (20 bytes).
+    Removing usci.o(i.USCI_U7816_Init), (90 bytes).
+    Removing usci.o(i.USCI_U7816_Receive), (98 bytes).
+    Removing usci.o(i.USCI_U7816_Transmit), (118 bytes).
+    Removing usci.o(i.USCI_UART_Receive), (68 bytes).
+    Removing usci.o(i.USCI_UART_TransmitOneByte), (38 bytes).
+    Removing dma.o(.rev16_text), (4 bytes).
+    Removing dma.o(.revsh_text), (4 bytes).
+    Removing dma.o(.rrx_text), (6 bytes).
+    Removing dma.o(i.DMA_Channel_Configure), (292 bytes).
+    Removing dma.o(i.DMA_Channel_Disable), (48 bytes).
+    Removing dma.o(i.DMA_Channel_Enable), (48 bytes).
+    Removing dma.o(i.DMA_Channel_Irq_Disable), (34 bytes).
+    Removing dma.o(i.DMA_Channel_Irq_Enable), (34 bytes).
+    Removing dma.o(i.DMA_Channel_Irq_IsEnable), (36 bytes).
+    Removing dma.o(i.DMA_Clear_All_Irq), (40 bytes).
+    Removing dma.o(i.DMA_Disable), (24 bytes).
+    Removing dma.o(i.DMA_Enable), (12 bytes).
+    Removing dma.o(i.DMA_Get_FreeChannel), (96 bytes).
+    Removing dma.o(i.DMA_Init), (62 bytes).
+    Removing dma.o(i.DMA_Mask_Irq), (312 bytes).
+    Removing dma.o(i.DMA_Num2Ch), (88 bytes).
+    Removing dma.o(i.DMA_RawIrq_IsActive), (152 bytes).
+    Removing dma.o(i.DMA_Unmask_Irq), (312 bytes).
+    Removing wdt.o(.rev16_text), (4 bytes).
+    Removing wdt.o(.revsh_text), (4 bytes).
+    Removing wdt.o(.rrx_text), (6 bytes).
+    Removing wdt.o(i.WDT_Disable), (52 bytes).
+    Removing wdt.o(i.WDT_Reset), (24 bytes).
+    Removing wdt.o(i.WDT_Set_ms), (32 bytes).
+    Removing fadc.o(.rev16_text), (4 bytes).
+    Removing fadc.o(.revsh_text), (4 bytes).
+    Removing fadc.o(.rrx_text), (6 bytes).
+    Removing fadc.o(i.FADC_SPI_ReadSingle), (88 bytes).
+    Removing efc.o(.rev16_text), (4 bytes).
+    Removing efc.o(.revsh_text), (4 bytes).
+    Removing efc.o(.rrx_text), (6 bytes).
+    Removing efc.o(i.EFC_Erase1Page), (100 bytes).
+    Removing efc.o(i.EFC_Erase1Page_and_Check), (52 bytes).
+    Removing efc.o(i.EFC_ReWrite_loop), (48 bytes).
+    Removing efc.o(i.EFC_Read), (42 bytes).
+    Removing efc.o(i.EFC_Set_Boot_Addr), (56 bytes).
+    Removing efc.o(i.EFC_Set_Info_Ro_Addr), (68 bytes).
+    Removing efc.o(i.EFC_Set_Main_Ro_Addr), (64 bytes).
+    Removing efc.o(i.EFC_Write1Page), (164 bytes).
+    Removing efc.o(i.EFC_Write1Page_and_Check), (88 bytes).
+    Removing spi_driver.o(.rev16_text), (4 bytes).
+    Removing spi_driver.o(.revsh_text), (4 bytes).
+    Removing spi_driver.o(.rrx_text), (6 bytes).
+    Removing spi_driver.o(i.RF_ReadWaveSPI), (96 bytes).
+    Removing gpio_driver.o(.rev16_text), (4 bytes).
+    Removing gpio_driver.o(.revsh_text), (4 bytes).
+    Removing gpio_driver.o(.rrx_text), (6 bytes).
+    Removing usart_driver.o(.rev16_text), (4 bytes).
+    Removing usart_driver.o(.revsh_text), (4 bytes).
+    Removing usart_driver.o(.rrx_text), (6 bytes).
+    Removing usart_driver.o(i.USART_Transmit_Int), (22 bytes).
+    Removing usart_driver.o(i._sys_exit), (4 bytes).
+    Removing usart_driver.o(i._ttywrch), (12 bytes).
+    Removing usart_driver.o(i.ferror), (8 bytes).
+    Removing usart_driver.o(i.fgetc), (16 bytes).
+    Removing usart_driver.o(i.fputc), (14 bytes).
+    Removing usart_driver.o(i.getkey), (4 bytes).
+    Removing usart_driver.o(i.sendchar), (28 bytes).
+    Removing usart_driver.o(i.usci_uART_rx_it), (56 bytes).
+    Removing delay_driver.o(.rev16_text), (4 bytes).
+    Removing delay_driver.o(.revsh_text), (4 bytes).
+    Removing delay_driver.o(.rrx_text), (6 bytes).
+    Removing delay_driver.o(i.SysTick_Init), (116 bytes).
+    Removing mpu_driver.o(.rev16_text), (4 bytes).
+    Removing mpu_driver.o(.revsh_text), (4 bytes).
+    Removing mpu_driver.o(.rrx_text), (6 bytes).
+    Removing irq_handler.o(.rev16_text), (4 bytes).
+    Removing irq_handler.o(.revsh_text), (4 bytes).
+    Removing irq_handler.o(.rrx_text), (6 bytes).
+    Removing dma_driver.o(.rev16_text), (4 bytes).
+    Removing dma_driver.o(.revsh_text), (4 bytes).
+    Removing dma_driver.o(.rrx_text), (6 bytes).
+    Removing dma_driver.o(i.DMA_Config_Init), (12 bytes).
+    Removing dma_driver.o(i.DMA_Start_TransferM2M_32), (128 bytes).
+    Removing dma_driver.o(.bss), (96 bytes).
+    Removing adc_driver.o(.rev16_text), (4 bytes).
+    Removing adc_driver.o(.revsh_text), (4 bytes).
+    Removing adc_driver.o(.rrx_text), (6 bytes).
+    Removing adc_driver.o(i.Chip2_ADC_Init), (20 bytes).
+    Removing sysclk_driver.o(.rev16_text), (4 bytes).
+    Removing sysclk_driver.o(.revsh_text), (4 bytes).
+    Removing sysclk_driver.o(.rrx_text), (6 bytes).
+    Removing wdt_driver.o(.rev16_text), (4 bytes).
+    Removing wdt_driver.o(.revsh_text), (4 bytes).
+    Removing wdt_driver.o(.rrx_text), (6 bytes).
+    Removing wdt_driver.o(i.Close_Wdt), (20 bytes).
+    Removing wdt_driver.o(i.WDT_Init), (32 bytes).
+    Removing wdt_driver.o(i.WDT_RstNow), (32 bytes).
+    Removing ospi_driver.o(.rev16_text), (4 bytes).
+    Removing ospi_driver.o(.revsh_text), (4 bytes).
+    Removing ospi_driver.o(.rrx_text), (6 bytes).
+    Removing ospi_driver.o(i.OSPI_MasterInit), (328 bytes).
+    Removing ospi_driver.o(i.OSPI_RecDMA64), (32 bytes).
+    Removing ospi_driver.o(i.OSPI_SlaveInit), (280 bytes).
+    Removing ospi_driver.o(i.OSPI_Trans64), (164 bytes).
+    Removing ospi_driver.o(i.OSPI_TransDMA64), (80 bytes).
+    Removing ospi_driver.o(i.ospi0_dma_callback), (4 bytes).
+    Removing ospi_driver.o(i.ospi1_dma_callback), (4 bytes).
+    Removing ospi_driver.o(i.test_dma_callback2), (4 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing main.o(i.ObjectProcess), (168 bytes).
+    Removing rf_spi_config.o(.rev16_text), (4 bytes).
+    Removing rf_spi_config.o(.revsh_text), (4 bytes).
+    Removing rf_spi_config.o(.rrx_text), (6 bytes).
+    Removing rf_spi_config.o(i.RF1_SPI_Init), (8 bytes).
+    Removing rf_spi_config.o(i.RF2_SPI_Init), (8 bytes).
+    Removing rf_spi_config.o(i.RF_CHIP2_Disable), (168 bytes).
+    Removing rf_spi_config.o(i.RF_CLOSE), (48 bytes).
+    Removing rf_spi_config.o(i.RF_PA_FASTSW), (94 bytes).
+    Removing rf_spi_config.o(i.RF_PA_SET), (52 bytes).
+    Removing rf_spi_config.o(i.RF_SPI_Init), (8 bytes).
+    Removing rf_spi_config.o(i.rc6011_init_chip1_2), (270 bytes).
+    Removing rf_spi_config.o(i.rc6011_init_chip2), (270 bytes).
+    Removing rf_spi_config.o(i.tmp_regconfig), (306 bytes).
+    Removing rf_spi_config.o(i.tmp_regconfig1), (354 bytes).
+    Removing rf_spi_config.o(i.waveGenClear_RF2), (12 bytes).
+    Removing rf_spi_config.o(i.waveGenStart), (12 bytes).
+    Removing rf_spi_config.o(i.waveGenStart2), (12 bytes).
+    Removing rf_spi_config.o(i.waveGenStop2), (12 bytes).
+    Removing rf_spi_config.o(.bss), (9 bytes).
+    Removing rf_spi_config.o(.data), (1 bytes).
+    Removing bb_config.o(.rev16_text), (4 bytes).
+    Removing bb_config.o(.revsh_text), (4 bytes).
+    Removing bb_config.o(.rrx_text), (6 bytes).
+    Removing bb_config.o(i.BB_CFAR_Init), (184 bytes).
+    Removing bb_config.o(i.BB_CpxFix2pf), (252 bytes).
+    Removing bb_config.o(i.BB_CpxFlt2pf_long), (288 bytes).
+    Removing bb_config.o(i.BB_CpxFlt2pf_short), (252 bytes).
+    Removing bb_config.o(i.BB_FFT1D_ZP_Init), (2 bytes).
+    Removing bb_config.o(i.BB_PrepConfig_chip2), (580 bytes).
+    Removing bb_config.o(i.BB_WBUF_W64), (32 bytes).
+    Removing bb_config.o(i.BB_waitESR), (48 bytes).
+    Removing bb_config.o(i.Chip1_BB_Doppler_PrepConfig), (740 bytes).
+    Removing bb_config.o(i.Chip2_BB_Doppler_PrepConfig), (764 bytes).
+    Removing bb_config.o(i.Chip2_BB_PrepConfig), (748 bytes).
+    Removing bb_config.o(i.flt_max_search), (60 bytes).
+    Removing usart_protocol.o(.rev16_text), (4 bytes).
+    Removing usart_protocol.o(.revsh_text), (4 bytes).
+    Removing usart_protocol.o(.rrx_text), (6 bytes).
+    Removing usart_protocol.o(.bss), (32 bytes).
+    Removing usart_protocol.o(.data), (13 bytes).
+    Removing paramconfig.o(.rev16_text), (4 bytes).
+    Removing paramconfig.o(.revsh_text), (4 bytes).
+    Removing paramconfig.o(.rrx_text), (6 bytes).
+    Removing paramconfig.o(i.Printf_Param), (348 bytes).
+    Removing led.o(.rev16_text), (4 bytes).
+    Removing led.o(.revsh_text), (4 bytes).
+    Removing led.o(.rrx_text), (6 bytes).
+    Removing led.o(i.Cnt_Delay), (22 bytes).
+    Removing led.o(i.StartSignalDetect), (56 bytes).
+    Removing led.o(i.TimerInit), (100 bytes).
+    Removing product.o(.rev16_text), (4 bytes).
+    Removing product.o(.revsh_text), (4 bytes).
+    Removing product.o(.rrx_text), (6 bytes).
+    Removing app_func.o(.rev16_text), (4 bytes).
+    Removing app_func.o(.revsh_text), (4 bytes).
+    Removing app_func.o(.rrx_text), (6 bytes).
+    Removing f2d.o(.text), (38 bytes).
+    Removing dfixul.o(.text), (48 bytes).
+    Removing cdrcmple.o(.text), (48 bytes).
+
+216 unused section(s) (total 15103 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      224  startup_sky32b750.o(RESET)
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ..\Library\Device\SkyRelay\SKY32B750\Source\ARM\startup_SKY32B750.s 0x00000000   Number         0  startup_sky32b750.o ABSOLUTE
+    ..\Library\Device\SkyRelay\SKY32B750\Source\system_SKY32B750.c 0x00000000   Number         0  system_sky32b750.o ABSOLUTE
+    ..\Library\StdDriver\Source\delay.c      0x00000000   Number         0  delay.o ABSOLUTE
+    ..\Library\StdDriver\Source\dma.c        0x00000000   Number         0  dma.o ABSOLUTE
+    ..\Library\StdDriver\Source\efc.c        0x00000000   Number         0  efc.o ABSOLUTE
+    ..\Library\StdDriver\Source\fadc.c       0x00000000   Number         0  fadc.o ABSOLUTE
+    ..\Library\StdDriver\Source\gpio.c       0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\Library\StdDriver\Source\mpu.c        0x00000000   Number         0  mpu.o ABSOLUTE
+    ..\Library\StdDriver\Source\pinmux.c     0x00000000   Number         0  pinmux.o ABSOLUTE
+    ..\Library\StdDriver\Source\usci.c       0x00000000   Number         0  usci.o ABSOLUTE
+    ..\Library\StdDriver\Source\wdt.c        0x00000000   Number         0  wdt.o ABSOLUTE
+    ..\\Library\\Device\\SkyRelay\\SKY32B750\\Source\\system_SKY32B750.c 0x00000000   Number         0  system_sky32b750.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\delay.c  0x00000000   Number         0  delay.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\dma.c    0x00000000   Number         0  dma.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\efc.c    0x00000000   Number         0  efc.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\fadc.c   0x00000000   Number         0  fadc.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\gpio.c   0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\mpu.c    0x00000000   Number         0  mpu.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\pinmux.c 0x00000000   Number         0  pinmux.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\usci.c   0x00000000   Number         0  usci.o ABSOLUTE
+    ..\\Library\\StdDriver\\Source\\wdt.c    0x00000000   Number         0  wdt.o ABSOLUTE
+    App\App_Func.c                           0x00000000   Number         0  app_func.o ABSOLUTE
+    App\\App_Func.c                          0x00000000   Number         0  app_func.o ABSOLUTE
+    MidDriver\ADC_Driver.c                   0x00000000   Number         0  adc_driver.o ABSOLUTE
+    MidDriver\DMA_Driver.c                   0x00000000   Number         0  dma_driver.o ABSOLUTE
+    MidDriver\Delay_Driver.c                 0x00000000   Number         0  delay_driver.o ABSOLUTE
+    MidDriver\GPIO_Driver.c                  0x00000000   Number         0  gpio_driver.o ABSOLUTE
+    MidDriver\IRQ_Handler.c                  0x00000000   Number         0  irq_handler.o ABSOLUTE
+    MidDriver\MPU_Driver.c                   0x00000000   Number         0  mpu_driver.o ABSOLUTE
+    MidDriver\OSPI_Driver.c                  0x00000000   Number         0  ospi_driver.o ABSOLUTE
+    MidDriver\SPI_Driver.c                   0x00000000   Number         0  spi_driver.o ABSOLUTE
+    MidDriver\SysClk_Driver.c                0x00000000   Number         0  sysclk_driver.o ABSOLUTE
+    MidDriver\USART_Driver.c                 0x00000000   Number         0  usart_driver.o ABSOLUTE
+    MidDriver\WDT_Driver.c                   0x00000000   Number         0  wdt_driver.o ABSOLUTE
+    MidDriver\\ADC_Driver.c                  0x00000000   Number         0  adc_driver.o ABSOLUTE
+    MidDriver\\DMA_Driver.c                  0x00000000   Number         0  dma_driver.o ABSOLUTE
+    MidDriver\\Delay_Driver.c                0x00000000   Number         0  delay_driver.o ABSOLUTE
+    MidDriver\\GPIO_Driver.c                 0x00000000   Number         0  gpio_driver.o ABSOLUTE
+    MidDriver\\IRQ_Handler.c                 0x00000000   Number         0  irq_handler.o ABSOLUTE
+    MidDriver\\MPU_Driver.c                  0x00000000   Number         0  mpu_driver.o ABSOLUTE
+    MidDriver\\OSPI_Driver.c                 0x00000000   Number         0  ospi_driver.o ABSOLUTE
+    MidDriver\\SPI_Driver.c                  0x00000000   Number         0  spi_driver.o ABSOLUTE
+    MidDriver\\SysClk_Driver.c               0x00000000   Number         0  sysclk_driver.o ABSOLUTE
+    MidDriver\\USART_Driver.c                0x00000000   Number         0  usart_driver.o ABSOLUTE
+    MidDriver\\WDT_Driver.c                  0x00000000   Number         0  wdt_driver.o ABSOLUTE
+    User\BB_Config.c                         0x00000000   Number         0  bb_config.o ABSOLUTE
+    User\Led.c                               0x00000000   Number         0  led.o ABSOLUTE
+    User\ParamConfig.c                       0x00000000   Number         0  paramconfig.o ABSOLUTE
+    User\Product.c                           0x00000000   Number         0  product.o ABSOLUTE
+    User\RF_SPI_Config.c                     0x00000000   Number         0  rf_spi_config.o ABSOLUTE
+    User\Usart_Protocol.c                    0x00000000   Number         0  usart_protocol.o ABSOLUTE
+    User\\BB_Config.c                        0x00000000   Number         0  bb_config.o ABSOLUTE
+    User\\Led.c                              0x00000000   Number         0  led.o ABSOLUTE
+    User\\ParamConfig.c                      0x00000000   Number         0  paramconfig.o ABSOLUTE
+    User\\Product.c                          0x00000000   Number         0  product.o ABSOLUTE
+    User\\RF_SPI_Config.c                    0x00000000   Number         0  rf_spi_config.o ABSOLUTE
+    User\\Usart_Protocol.c                   0x00000000   Number         0  usart_protocol.o ABSOLUTE
+    User\\main.c                             0x00000000   Number         0  main.o ABSOLUTE
+    User\main.c                              0x00000000   Number         0  main.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000e0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000e0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000e4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000e8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000e8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000e8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000f0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000f0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000f0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000f0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000f4   Section       36  startup_sky32b750.o(.text)
+    $v0                                      0x000000f4   Number         0  startup_sky32b750.o(.text)
+    .text                                    0x00000118   Section        0  uldiv.o(.text)
+    .text                                    0x0000017a   Section        0  llshl.o(.text)
+    .text                                    0x00000198   Section        0  memcpya.o(.text)
+    .text                                    0x000001bc   Section        0  memseta.o(.text)
+    .text                                    0x000001e0   Section        0  dadd.o(.text)
+    .text                                    0x0000032e   Section        0  dmul.o(.text)
+    .text                                    0x00000412   Section        0  ddiv.o(.text)
+    .text                                    0x000004f0   Section        0  dfltui.o(.text)
+    .text                                    0x0000050a   Section        0  dfixui.o(.text)
+    .text                                    0x0000053c   Section        0  d2f.o(.text)
+    .text                                    0x00000574   Section        0  llushr.o(.text)
+    .text                                    0x00000594   Section        0  llsshr.o(.text)
+    .text                                    0x000005b8   Section        0  fepilogue.o(.text)
+    .text                                    0x000005b8   Section        0  iusefp.o(.text)
+    .text                                    0x00000626   Section        0  depilogue.o(.text)
+    .text                                    0x000006e0   Section       36  init.o(.text)
+    i.ADC_Init                               0x00000704   Section        0  adc_driver.o(i.ADC_Init)
+    i.BB_CFAR_CFG0                           0x000007c4   Section        0  bb_config.o(i.BB_CFAR_CFG0)
+    i.BB_FFT2D_ZP_Init                       0x00000860   Section        0  bb_config.o(i.BB_FFT2D_ZP_Init)
+    i.BB_FFT_ZP_Clear                        0x00000a14   Section        0  bb_config.o(i.BB_FFT_ZP_Clear)
+    i.BB_IRQHandler                          0x00000a80   Section        0  irq_handler.o(i.BB_IRQHandler)
+    i.BB_IRQ_Init                            0x00000aec   Section        0  bb_config.o(i.BB_IRQ_Init)
+    i.BB_Init                                0x00000b28   Section        0  app_func.o(i.BB_Init)
+    i.BB_PrepConfig                          0x00000c48   Section        0  bb_config.o(i.BB_PrepConfig)
+    i.BB_RANG_CFAR_CONFIG                    0x00000e8c   Section        0  bb_config.o(i.BB_RANG_CFAR_CONFIG)
+    i.BB_VEL_CFAR_CONFIG                     0x00000f38   Section        0  bb_config.o(i.BB_VEL_CFAR_CONFIG)
+    i.BB_WBUF_W16                            0x0000100c   Section        0  bb_config.o(i.BB_WBUF_W16)
+    i.BB_WBUF_W32                            0x00001024   Section        0  bb_config.o(i.BB_WBUF_W32)
+    i.BB_waitISR                             0x0000103c   Section        0  bb_config.o(i.BB_waitISR)
+    i.Cache_Disable                          0x0000106c   Section        0  system_sky32b750.o(i.Cache_Disable)
+    i.Cache_Invalidate                       0x00001168   Section        0  system_sky32b750.o(i.Cache_Invalidate)
+    i.Chip1_ADC_Init                         0x00001238   Section        0  adc_driver.o(i.Chip1_ADC_Init)
+    i.Chip1_BB_PrepConfig                    0x0000124c   Section        0  bb_config.o(i.Chip1_BB_PrepConfig)
+    i.Cnt_Delay_ms                           0x00001538   Section        0  delay_driver.o(i.Cnt_Delay_ms)
+    i.Cnt_Delay_us                           0x00001560   Section        0  delay_driver.o(i.Cnt_Delay_us)
+    i.DMA_Clear_Irq                          0x00001578   Section        0  dma.o(i.DMA_Clear_Irq)
+    i.DMA_IRQHandler                         0x00001618   Section        0  dma.o(i.DMA_IRQHandler)
+    i.Default_Param_Config                   0x00001748   Section        0  paramconfig.o(i.Default_Param_Config)
+    i.EFC_Get_ActualAddress                  0x0000178c   Section        0  efc.o(i.EFC_Get_ActualAddress)
+    i.EFC_ReWrite                            0x000017dc   Section        0  efc.o(i.EFC_ReWrite)
+    i.EFC_WriteInside1Page                   0x000018b0   Section        0  efc.o(i.EFC_WriteInside1Page)
+    i.FADC_SPI_WriteSingle                   0x000019e8   Section        0  fadc.o(i.FADC_SPI_WriteSingle)
+    i.FPU_Enable                             0x00001a28   Section        0  system_sky32b750.o(i.FPU_Enable)
+    i.Func_Init                              0x00001a90   Section        0  app_func.o(i.Func_Init)
+    i.GPIO_AE_Ctrl                           0x00001a9c   Section        0  gpio.o(i.GPIO_AE_Ctrl)
+    i.GPIO_Init                              0x00001b68   Section        0  gpio_driver.o(i.GPIO_Init)
+    i.GPIO_PullUp                            0x00001c24   Section        0  gpio.o(i.GPIO_PullUp)
+    i.GPIO_SetMode                           0x00001cb0   Section        0  gpio.o(i.GPIO_SetMode)
+    i.Get_Effective_Param                    0x00001cc4   Section        0  paramconfig.o(i.Get_Effective_Param)
+    Get_Effective_Param                      0x00001cc5   Thumb Code    40  paramconfig.o(i.Get_Effective_Param)
+    i.Get_SysClk_Config                      0x00001cf0   Section        0  system_sky32b750.o(i.Get_SysClk_Config)
+    i.HRC_System_Clock_Update                0x00001d74   Section        0  system_sky32b750.o(i.HRC_System_Clock_Update)
+    i.HW_Delay_ms                            0x00001e1c   Section        0  delay.o(i.HW_Delay_ms)
+    i.HXTAL_Caliber_LRC                      0x00001e80   Section        0  system_sky32b750.o(i.HXTAL_Caliber_LRC)
+    i.LRC_Caliber_HRC                        0x00001f90   Section        0  system_sky32b750.o(i.LRC_Caliber_HRC)
+    i.MPU_LocalConfig                        0x0000206c   Section        0  mpu_driver.o(i.MPU_LocalConfig)
+    i.MmwDemo_cfarPeakGroupingCfarQualified  0x0000234c   Section        0  app_func.o(i.MmwDemo_cfarPeakGroupingCfarQualified)
+    i.NMI_Handler                            0x0000266c   Section        0  system_sky32b750.o(i.NMI_Handler)
+    i.OSPI0_IRQHandler                       0x000026c0   Section        0  ospi_driver.o(i.OSPI0_IRQHandler)
+    i.OSPI1_IRQHandler                       0x000026f0   Section        0  ospi_driver.o(i.OSPI1_IRQHandler)
+    i.PLL_System_Clock_Update                0x00002720   Section        0  system_sky32b750.o(i.PLL_System_Clock_Update)
+    i.ParamConfigInit                        0x000027c8   Section        0  paramconfig.o(i.ParamConfigInit)
+    i.PinMux_Set                             0x000027e0   Section        0  pinmux.o(i.PinMux_Set)
+    i.Prod_CalcFireHeight                    0x00002928   Section        0  product.o(i.Prod_CalcFireHeight)
+    i.Prod_CalcRptHeight                     0x000029a4   Section        0  product.o(i.Prod_CalcRptHeight)
+    i.Prod_CommHandleK101W                   0x000029c8   Section        0  product.o(i.Prod_CommHandleK101W)
+    i.Prod_SelfCheckK101W                    0x00002b00   Section        0  product.o(i.Prod_SelfCheckK101W)
+    i.Prod_SendFireMsgK101W                  0x00002b68   Section        0  product.o(i.Prod_SendFireMsgK101W)
+    i.Prod_SendPeriodicMsgK101W              0x00002bc0   Section        0  product.o(i.Prod_SendPeriodicMsgK101W)
+    i.RF_CHIP1_Disable                       0x00002c04   Section        0  rf_spi_config.o(i.RF_CHIP1_Disable)
+    i.RF_CHIPEN                              0x00002cac   Section        0  rf_spi_config.o(i.RF_CHIPEN)
+    i.RF_CHIPEN_Disable                      0x00002ccc   Section        0  rf_spi_config.o(i.RF_CHIPEN_Disable)
+    i.RF_Clock40M_En                         0x00002d74   Section        0  rf_spi_config.o(i.RF_Clock40M_En)
+    i.RF_ReadRegSPI                          0x00002d7c   Section        0  spi_driver.o(i.RF_ReadRegSPI)
+    i.RF_SPI_CS_CTRL                         0x00002e34   Section        0  spi_driver.o(i.RF_SPI_CS_CTRL)
+    i.RF_WaveSet                             0x00002e54   Section        0  rf_spi_config.o(i.RF_WaveSet)
+    RF_WaveSet                               0x00002e55   Thumb Code   120  rf_spi_config.o(i.RF_WaveSet)
+    i.RF_WriteCmdSPI                         0x00002ecc   Section        0  spi_driver.o(i.RF_WriteCmdSPI)
+    i.RF_WriteRegSPI_Fast                    0x00002f00   Section        0  spi_driver.o(i.RF_WriteRegSPI_Fast)
+    i.RF_WriteWaveSPI                        0x00002fa0   Section        0  spi_driver.o(i.RF_WriteWaveSPI)
+    i.Read_Param_From_Flash                  0x00002fec   Section        0  paramconfig.o(i.Read_Param_From_Flash)
+    i.ResolutionCount                        0x0000316c   Section        0  paramconfig.o(i.ResolutionCount)
+    ResolutionCount                          0x0000316d   Thumb Code   126  paramconfig.o(i.ResolutionCount)
+    i.SPI_Init                               0x00003218   Section        0  spi_driver.o(i.SPI_Init)
+    i.SYS_CLK_HRC_Init                       0x000032bc   Section        0  sysclk_driver.o(i.SYS_CLK_HRC_Init)
+    i.SYS_CLK_PLL_Init                       0x00003304   Section        0  sysclk_driver.o(i.SYS_CLK_PLL_Init)
+    i.Save_Param_Config                      0x0000335c   Section        0  paramconfig.o(i.Save_Param_Config)
+    i.Set_CanClk_Div                         0x00003698   Section        0  system_sky32b750.o(i.Set_CanClk_Div)
+    i.Set_Flash_WS                           0x000036ae   Section        0  system_sky32b750.o(i.Set_Flash_WS)
+    i.Set_HRC                                0x000036c4   Section        0  system_sky32b750.o(i.Set_HRC)
+    i.Set_PLL                                0x000036e4   Section        0  system_sky32b750.o(i.Set_PLL)
+    i.Set_SysClk_Config                      0x00003734   Section        0  system_sky32b750.o(i.Set_SysClk_Config)
+    i.Set_SysClk_Div                         0x000037d8   Section        0  system_sky32b750.o(i.Set_SysClk_Div)
+    i.SysTick_Handler                        0x000037f0   Section        0  irq_handler.o(i.SysTick_Handler)
+    i.Sys_CalcVeloFftPt                      0x00003800   Section        0  main.o(i.Sys_CalcVeloFftPt)
+    i.Sys_Init                               0x0000387c   Section        0  main.o(i.Sys_Init)
+    i.Sys_SelfCheck                          0x0000395c   Section        0  main.o(i.Sys_SelfCheck)
+    i.SystemInit                             0x00003974   Section        0  system_sky32b750.o(i.SystemInit)
+    i.TMRA_IRQHandler                        0x00003998   Section        0  led.o(i.TMRA_IRQHandler)
+    i.Target2D_Process                       0x00003a14   Section        0  app_func.o(i.Target2D_Process)
+    i.USART_Init                             0x00003a3c   Section        0  usart_driver.o(i.USART_Init)
+    i.USART_Transmit_Bytes                   0x00003ae0   Section        0  usart_driver.o(i.USART_Transmit_Bytes)
+    i.USCI4_IRQHandler                       0x00003af4   Section        0  usart_driver.o(i.USCI4_IRQHandler)
+    i.USCI_Clear_ESR                         0x00003b90   Section        0  usci.o(i.USCI_Clear_ESR)
+    i.USCI_Clear_ISR                         0x00003b98   Section        0  usci.o(i.USCI_Clear_ISR)
+    i.USCI_SPI_Init                          0x00003ba0   Section        0  usci.o(i.USCI_SPI_Init)
+    i.USCI_SPI_Transmit                      0x00003c2a   Section        0  usci.o(i.USCI_SPI_Transmit)
+    i.USCI_UART_Init                         0x00003c84   Section        0  usci.o(i.USCI_UART_Init)
+    i.USCI_UART_Transmit                     0x00003d18   Section        0  usci.o(i.USCI_UART_Transmit)
+    i.WDT_Enable                             0x00003d70   Section        0  wdt.o(i.WDT_Enable)
+    i.WDT_Open                               0x00003da4   Section        0  wdt.o(i.WDT_Open)
+    i.Word2Byte                              0x00003dc0   Section        0  usart_protocol.o(i.Word2Byte)
+    i.XFProtocol_Analysis_Handle             0x00003dd0   Section        0  usart_protocol.o(i.XFProtocol_Analysis_Handle)
+    i.__NVIC_DisableIRQ                      0x00003e24   Section        0  rf_spi_config.o(i.__NVIC_DisableIRQ)
+    __NVIC_DisableIRQ                        0x00003e25   Thumb Code    54  rf_spi_config.o(i.__NVIC_DisableIRQ)
+    i.__NVIC_EnableIRQ                       0x00003e60   Section        0  rf_spi_config.o(i.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x00003e61   Thumb Code    34  rf_spi_config.o(i.__NVIC_EnableIRQ)
+    i.__scatterload_copy                     0x00003e82   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00003e90   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00003e92   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.getBcc                                 0x00003ea0   Section        0  usart_protocol.o(i.getBcc)
+    i.main                                   0x00003ebc   Section        0  main.o(i.main)
+    i.mmWave_BbPrep                          0x00003ef8   Section        0  app_func.o(i.mmWave_BbPrep)
+    i.mmWave_CfarRange                       0x00003f80   Section        0  app_func.o(i.mmWave_CfarRange)
+    i.mmWave_CfarVelocity                    0x000041fc   Section        0  app_func.o(i.mmWave_CfarVelocity)
+    i.mmWave_FftRange                        0x0000456c   Section        0  app_func.o(i.mmWave_FftRange)
+    i.mmWave_FftVelocity                     0x0000480c   Section        0  app_func.o(i.mmWave_FftVelocity)
+    i.mmWave_FireProc                        0x00004a30   Section        0  app_func.o(i.mmWave_FireProc)
+    i.mmWave_Init                            0x00004af8   Section        0  app_func.o(i.mmWave_Init)
+    i.mmWave_Process                         0x00004b14   Section        0  app_func.o(i.mmWave_Process)
+    i.mmWave_TargetProc                      0x00004ba8   Section        0  app_func.o(i.mmWave_TargetProc)
+    i.rc6011_init_chip1                      0x00004e14   Section        0  rf_spi_config.o(i.rc6011_init_chip1)
+    i.waveGenClear_RF1                       0x00004f1e   Section        0  rf_spi_config.o(i.waveGenClear_RF1)
+    i.waveGenStart1                          0x00004f2a   Section        0  rf_spi_config.o(i.waveGenStart1)
+    i.waveGenStop                            0x00004f36   Section        0  rf_spi_config.o(i.waveGenStop)
+    i.waveGenStop1                           0x00004f42   Section        0  rf_spi_config.o(i.waveGenStop1)
+    .constdata                               0x00004f50   Section     4304  app_func.o(.constdata)
+    .bss                                     0x20000000   Section     8192  efc.o(.bss)
+    .data                                    0x20004000   Section       40  system_sky32b750.o(.data)
+    .data                                    0x20004028   Section       13  usart_driver.o(.data)
+    .data                                    0x20004038   Section        9  irq_handler.o(.data)
+    .data                                    0x20004044   Section       10  ospi_driver.o(.data)
+    .data                                    0x20004050   Section       24  main.o(.data)
+    .data                                    0x20004068   Section        8  bb_config.o(.data)
+    .data                                    0x20004070   Section       16  led.o(.data)
+    time_it_falg                             0x20004070   Data           4  led.o(.data)
+    ChangeFlage                              0x20004074   Data           1  led.o(.data)
+    .data                                    0x20004080   Section       25  product.o(.data)
+    .data                                    0x2000409c   Section      138  app_func.o(.data)
+    .bss                                     0x20004128   Section       56  dma.o(.bss)
+    .bss                                     0x20004160   Section       56  spi_driver.o(.bss)
+    .bss                                     0x20004198   Section      180  usart_driver.o(.bss)
+    .bss                                     0x20004250   Section      312  main.o(.bss)
+    .bss                                     0x20004388   Section       88  bb_config.o(.bss)
+    .bss                                     0x200043e0   Section       76  paramconfig.o(.bss)
+    .bss                                     0x20004430   Section     4490  app_func.o(.bss)
+    STACK                                    0x200055c0   Section     2048  startup_sky32b750.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi5$EXTD16$VFPS$VFMA$PE$PLD8$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_sky32b750.o(RESET)
+    _printf_a                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_c                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_charcount                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_d                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_e                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_f                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_flags                            0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_dec                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_hex                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_g                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_i                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_int_dec                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_l                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ll                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lld                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lli                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llo                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llu                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llx                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_dec                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_hex                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_oct                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ls                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_mbtowc                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_n                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_o                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_p                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_percent                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_pre_padding                      0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_return_value                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_s                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_sizespec                         0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_str                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_signed                  0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_unsigned                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_u                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wctomb                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_widthprec                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_x                                0x00000000   Number         0  stubs.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __main                                   0x000000e1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000e1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000e5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000e9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000e9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000e9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000e9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000f1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000f1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x000000f5   Thumb Code     8  startup_sky32b750.o(.text)
+    HardFault_Handler                        0x000000ff   Thumb Code     2  startup_sky32b750.o(.text)
+    MemManage_Handler                        0x00000101   Thumb Code     2  startup_sky32b750.o(.text)
+    BusFault_Handler                         0x00000103   Thumb Code     2  startup_sky32b750.o(.text)
+    UsageFault_Handler                       0x00000105   Thumb Code     2  startup_sky32b750.o(.text)
+    SVC_Handler                              0x00000107   Thumb Code     2  startup_sky32b750.o(.text)
+    DebugMon_Handler                         0x00000109   Thumb Code     2  startup_sky32b750.o(.text)
+    PendSV_Handler                           0x0000010b   Thumb Code     2  startup_sky32b750.o(.text)
+    BOD_IRQHandler                           0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    CAN0_IRQHandler                          0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    CAN1_IRQHandler                          0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO0_E0_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO0_E1_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO0_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO1_E0_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO1_E1_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO1_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO2_E0_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO2_E1_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO2_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO3_E0_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO3_E1_IRQHandler                      0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    GPIO3_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    I2C_IRQHandler                           0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    QSPI0_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    QSPI1_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    RES_IRQHandler                           0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    RTC_IRQHandler                           0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    SAR_IRQHandler                           0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    TMRB0_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    TMRB1_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    TMRB2_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    TMRB3_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    USCI0_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    USCI1_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    USCI2_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    USCI3_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    USCI5_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    USCI6_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    USCI7_IRQHandler                         0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    WDT_IRQHandler                           0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    WWDG_IRQHandler                          0x0000010f   Thumb Code     0  startup_sky32b750.o(.text)
+    __aeabi_uldivmod                         0x00000119   Thumb Code    98  uldiv.o(.text)
+    __aeabi_llsl                             0x0000017b   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x0000017b   Thumb Code     0  llshl.o(.text)
+    __aeabi_memcpy                           0x00000199   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x00000199   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x00000199   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x000001bd   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x000001bd   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x000001bd   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x000001cb   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x000001cb   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x000001cb   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x000001cf   Thumb Code    18  memseta.o(.text)
+    __aeabi_dadd                             0x000001e1   Thumb Code   322  dadd.o(.text)
+    __aeabi_dsub                             0x00000323   Thumb Code     6  dadd.o(.text)
+    __aeabi_drsub                            0x00000329   Thumb Code     6  dadd.o(.text)
+    __aeabi_dmul                             0x0000032f   Thumb Code   228  dmul.o(.text)
+    __aeabi_ddiv                             0x00000413   Thumb Code   222  ddiv.o(.text)
+    __aeabi_ui2d                             0x000004f1   Thumb Code    26  dfltui.o(.text)
+    __aeabi_d2uiz                            0x0000050b   Thumb Code    50  dfixui.o(.text)
+    __aeabi_d2f                              0x0000053d   Thumb Code    56  d2f.o(.text)
+    __aeabi_llsr                             0x00000575   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x00000575   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x00000595   Thumb Code    36  llsshr.o(.text)
+    _ll_sshift_r                             0x00000595   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x000005b9   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x000005b9   Thumb Code    18  fepilogue.o(.text)
+    _float_epilogue                          0x000005cb   Thumb Code    92  fepilogue.o(.text)
+    _double_round                            0x00000627   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x00000645   Thumb Code   156  depilogue.o(.text)
+    __scatterload                            0x000006e1   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000006e1   Thumb Code     0  init.o(.text)
+    ADC_Init                                 0x00000705   Thumb Code   180  adc_driver.o(i.ADC_Init)
+    BB_CFAR_CFG0                             0x000007c5   Thumb Code   152  bb_config.o(i.BB_CFAR_CFG0)
+    BB_FFT2D_ZP_Init                         0x00000861   Thumb Code   426  bb_config.o(i.BB_FFT2D_ZP_Init)
+    BB_FFT_ZP_Clear                          0x00000a15   Thumb Code   104  bb_config.o(i.BB_FFT_ZP_Clear)
+    BB_IRQHandler                            0x00000a81   Thumb Code    98  irq_handler.o(i.BB_IRQHandler)
+    BB_IRQ_Init                              0x00000aed   Thumb Code    56  bb_config.o(i.BB_IRQ_Init)
+    BB_Init                                  0x00000b29   Thumb Code   250  app_func.o(i.BB_Init)
+    BB_PrepConfig                            0x00000c49   Thumb Code   570  bb_config.o(i.BB_PrepConfig)
+    BB_RANG_CFAR_CONFIG                      0x00000e8d   Thumb Code   154  bb_config.o(i.BB_RANG_CFAR_CONFIG)
+    BB_VEL_CFAR_CONFIG                       0x00000f39   Thumb Code   194  bb_config.o(i.BB_VEL_CFAR_CONFIG)
+    BB_WBUF_W16                              0x0000100d   Thumb Code    24  bb_config.o(i.BB_WBUF_W16)
+    BB_WBUF_W32                              0x00001025   Thumb Code    24  bb_config.o(i.BB_WBUF_W32)
+    BB_waitISR                               0x0000103d   Thumb Code    44  bb_config.o(i.BB_waitISR)
+    Cache_Disable                            0x0000106d   Thumb Code   244  system_sky32b750.o(i.Cache_Disable)
+    Cache_Invalidate                         0x00001169   Thumb Code   200  system_sky32b750.o(i.Cache_Invalidate)
+    Chip1_ADC_Init                           0x00001239   Thumb Code    14  adc_driver.o(i.Chip1_ADC_Init)
+    Chip1_BB_PrepConfig                      0x0000124d   Thumb Code   714  bb_config.o(i.Chip1_BB_PrepConfig)
+    Cnt_Delay_ms                             0x00001539   Thumb Code    32  delay_driver.o(i.Cnt_Delay_ms)
+    Cnt_Delay_us                             0x00001561   Thumb Code    22  delay_driver.o(i.Cnt_Delay_us)
+    DMA_Clear_Irq                            0x00001579   Thumb Code   150  dma.o(i.DMA_Clear_Irq)
+    DMA_IRQHandler                           0x00001619   Thumb Code   288  dma.o(i.DMA_IRQHandler)
+    Default_Param_Config                     0x00001749   Thumb Code    62  paramconfig.o(i.Default_Param_Config)
+    EFC_Get_ActualAddress                    0x0000178d   Thumb Code    72  efc.o(i.EFC_Get_ActualAddress)
+    EFC_ReWrite                              0x000017dd   Thumb Code   204  efc.o(i.EFC_ReWrite)
+    EFC_WriteInside1Page                     0x000018b1   Thumb Code   286  efc.o(i.EFC_WriteInside1Page)
+    FADC_SPI_WriteSingle                     0x000019e9   Thumb Code    58  fadc.o(i.FADC_SPI_WriteSingle)
+    FPU_Enable                               0x00001a29   Thumb Code    98  system_sky32b750.o(i.FPU_Enable)
+    Func_Init                                0x00001a91   Thumb Code    12  app_func.o(i.Func_Init)
+    GPIO_AE_Ctrl                             0x00001a9d   Thumb Code   196  gpio.o(i.GPIO_AE_Ctrl)
+    GPIO_Init                                0x00001b69   Thumb Code   178  gpio_driver.o(i.GPIO_Init)
+    GPIO_PullUp                              0x00001c25   Thumb Code   130  gpio.o(i.GPIO_PullUp)
+    GPIO_SetMode                             0x00001cb1   Thumb Code    20  gpio.o(i.GPIO_SetMode)
+    Get_SysClk_Config                        0x00001cf1   Thumb Code   120  system_sky32b750.o(i.Get_SysClk_Config)
+    HRC_System_Clock_Update                  0x00001d75   Thumb Code   148  system_sky32b750.o(i.HRC_System_Clock_Update)
+    HW_Delay_ms                              0x00001e1d   Thumb Code    96  delay.o(i.HW_Delay_ms)
+    HXTAL_Caliber_LRC                        0x00001e81   Thumb Code   254  system_sky32b750.o(i.HXTAL_Caliber_LRC)
+    LRC_Caliber_HRC                          0x00001f91   Thumb Code   202  system_sky32b750.o(i.LRC_Caliber_HRC)
+    MPU_LocalConfig                          0x0000206d   Thumb Code   704  mpu_driver.o(i.MPU_LocalConfig)
+    MmwDemo_cfarPeakGroupingCfarQualified    0x0000234d   Thumb Code   798  app_func.o(i.MmwDemo_cfarPeakGroupingCfarQualified)
+    NMI_Handler                              0x0000266d   Thumb Code    68  system_sky32b750.o(i.NMI_Handler)
+    OSPI0_IRQHandler                         0x000026c1   Thumb Code    34  ospi_driver.o(i.OSPI0_IRQHandler)
+    OSPI1_IRQHandler                         0x000026f1   Thumb Code    36  ospi_driver.o(i.OSPI1_IRQHandler)
+    PLL_System_Clock_Update                  0x00002721   Thumb Code   148  system_sky32b750.o(i.PLL_System_Clock_Update)
+    ParamConfigInit                          0x000027c9   Thumb Code    20  paramconfig.o(i.ParamConfigInit)
+    PinMux_Set                               0x000027e1   Thumb Code   320  pinmux.o(i.PinMux_Set)
+    Prod_CalcFireHeight                      0x00002929   Thumb Code   102  product.o(i.Prod_CalcFireHeight)
+    Prod_CalcRptHeight                       0x000029a5   Thumb Code    34  product.o(i.Prod_CalcRptHeight)
+    Prod_CommHandleK101W                     0x000029c9   Thumb Code   288  product.o(i.Prod_CommHandleK101W)
+    Prod_SelfCheckK101W                      0x00002b01   Thumb Code    96  product.o(i.Prod_SelfCheckK101W)
+    Prod_SendFireMsgK101W                    0x00002b69   Thumb Code    82  product.o(i.Prod_SendFireMsgK101W)
+    Prod_SendPeriodicMsgK101W                0x00002bc1   Thumb Code    64  product.o(i.Prod_SendPeriodicMsgK101W)
+    RF_CHIP1_Disable                         0x00002c05   Thumb Code   168  rf_spi_config.o(i.RF_CHIP1_Disable)
+    RF_CHIPEN                                0x00002cad   Thumb Code    26  rf_spi_config.o(i.RF_CHIPEN)
+    RF_CHIPEN_Disable                        0x00002ccd   Thumb Code   168  rf_spi_config.o(i.RF_CHIPEN_Disable)
+    RF_Clock40M_En                           0x00002d75   Thumb Code     8  rf_spi_config.o(i.RF_Clock40M_En)
+    RF_ReadRegSPI                            0x00002d7d   Thumb Code   172  spi_driver.o(i.RF_ReadRegSPI)
+    RF_SPI_CS_CTRL                           0x00002e35   Thumb Code    28  spi_driver.o(i.RF_SPI_CS_CTRL)
+    RF_WriteCmdSPI                           0x00002ecd   Thumb Code    46  spi_driver.o(i.RF_WriteCmdSPI)
+    RF_WriteRegSPI_Fast                      0x00002f01   Thumb Code   150  spi_driver.o(i.RF_WriteRegSPI_Fast)
+    RF_WriteWaveSPI                          0x00002fa1   Thumb Code    68  spi_driver.o(i.RF_WriteWaveSPI)
+    Read_Param_From_Flash                    0x00002fed   Thumb Code   380  paramconfig.o(i.Read_Param_From_Flash)
+    SPI_Init                                 0x00003219   Thumb Code   142  spi_driver.o(i.SPI_Init)
+    SYS_CLK_HRC_Init                         0x000032bd   Thumb Code    64  sysclk_driver.o(i.SYS_CLK_HRC_Init)
+    SYS_CLK_PLL_Init                         0x00003305   Thumb Code    80  sysclk_driver.o(i.SYS_CLK_PLL_Init)
+    Save_Param_Config                        0x0000335d   Thumb Code   818  paramconfig.o(i.Save_Param_Config)
+    Set_CanClk_Div                           0x00003699   Thumb Code    22  system_sky32b750.o(i.Set_CanClk_Div)
+    Set_Flash_WS                             0x000036af   Thumb Code    22  system_sky32b750.o(i.Set_Flash_WS)
+    Set_HRC                                  0x000036c5   Thumb Code    28  system_sky32b750.o(i.Set_HRC)
+    Set_PLL                                  0x000036e5   Thumb Code    72  system_sky32b750.o(i.Set_PLL)
+    Set_SysClk_Config                        0x00003735   Thumb Code   152  system_sky32b750.o(i.Set_SysClk_Config)
+    Set_SysClk_Div                           0x000037d9   Thumb Code    24  system_sky32b750.o(i.Set_SysClk_Div)
+    SysTick_Handler                          0x000037f1   Thumb Code    12  irq_handler.o(i.SysTick_Handler)
+    Sys_CalcVeloFftPt                        0x00003801   Thumb Code   118  main.o(i.Sys_CalcVeloFftPt)
+    Sys_Init                                 0x0000387d   Thumb Code   206  main.o(i.Sys_Init)
+    Sys_SelfCheck                            0x0000395d   Thumb Code    20  main.o(i.Sys_SelfCheck)
+    SystemInit                               0x00003975   Thumb Code    26  system_sky32b750.o(i.SystemInit)
+    TMRA_IRQHandler                          0x00003999   Thumb Code   104  led.o(i.TMRA_IRQHandler)
+    Target2D_Process                         0x00003a15   Thumb Code    38  app_func.o(i.Target2D_Process)
+    USART_Init                               0x00003a3d   Thumb Code   146  usart_driver.o(i.USART_Init)
+    USART_Transmit_Bytes                     0x00003ae1   Thumb Code    20  usart_driver.o(i.USART_Transmit_Bytes)
+    USCI4_IRQHandler                         0x00003af5   Thumb Code   136  usart_driver.o(i.USCI4_IRQHandler)
+    USCI_Clear_ESR                           0x00003b91   Thumb Code     8  usci.o(i.USCI_Clear_ESR)
+    USCI_Clear_ISR                           0x00003b99   Thumb Code     8  usci.o(i.USCI_Clear_ISR)
+    USCI_SPI_Init                            0x00003ba1   Thumb Code   138  usci.o(i.USCI_SPI_Init)
+    USCI_SPI_Transmit                        0x00003c2b   Thumb Code    88  usci.o(i.USCI_SPI_Transmit)
+    USCI_UART_Init                           0x00003c85   Thumb Code   142  usci.o(i.USCI_UART_Init)
+    USCI_UART_Transmit                       0x00003d19   Thumb Code    88  usci.o(i.USCI_UART_Transmit)
+    WDT_Enable                               0x00003d71   Thumb Code    36  wdt.o(i.WDT_Enable)
+    WDT_Open                                 0x00003da5   Thumb Code    24  wdt.o(i.WDT_Open)
+    Word2Byte                                0x00003dc1   Thumb Code    16  usart_protocol.o(i.Word2Byte)
+    XFProtocol_Analysis_Handle               0x00003dd1   Thumb Code    74  usart_protocol.o(i.XFProtocol_Analysis_Handle)
+    __scatterload_copy                       0x00003e83   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00003e91   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00003e93   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    getBcc                                   0x00003ea1   Thumb Code    26  usart_protocol.o(i.getBcc)
+    main                                     0x00003ebd   Thumb Code    50  main.o(i.main)
+    mmWave_BbPrep                            0x00003ef9   Thumb Code   128  app_func.o(i.mmWave_BbPrep)
+    mmWave_CfarRange                         0x00003f81   Thumb Code   590  app_func.o(i.mmWave_CfarRange)
+    mmWave_CfarVelocity                      0x000041fd   Thumb Code   822  app_func.o(i.mmWave_CfarVelocity)
+    mmWave_FftRange                          0x0000456d   Thumb Code   640  app_func.o(i.mmWave_FftRange)
+    mmWave_FftVelocity                       0x0000480d   Thumb Code   522  app_func.o(i.mmWave_FftVelocity)
+    mmWave_FireProc                          0x00004a31   Thumb Code   176  app_func.o(i.mmWave_FireProc)
+    mmWave_Init                              0x00004af9   Thumb Code    26  app_func.o(i.mmWave_Init)
+    mmWave_Process                           0x00004b15   Thumb Code   140  app_func.o(i.mmWave_Process)
+    mmWave_TargetProc                        0x00004ba9   Thumb Code   600  app_func.o(i.mmWave_TargetProc)
+    rc6011_init_chip1                        0x00004e15   Thumb Code   266  rf_spi_config.o(i.rc6011_init_chip1)
+    waveGenClear_RF1                         0x00004f1f   Thumb Code    12  rf_spi_config.o(i.waveGenClear_RF1)
+    waveGenStart1                            0x00004f2b   Thumb Code    12  rf_spi_config.o(i.waveGenStart1)
+    waveGenStop                              0x00004f37   Thumb Code    12  rf_spi_config.o(i.waveGenStop)
+    waveGenStop1                             0x00004f43   Thumb Code    12  rf_spi_config.o(i.waveGenStop1)
+    calib_ap                                 0x00004f50   Data          16  app_func.o(.constdata)
+    calib_ap_Pre                             0x00004f60   Data          32  app_func.o(.constdata)
+    nco_fcw                                  0x00004f80   Data          16  app_func.o(.constdata)
+    winRange_Pre                             0x00004f90   Data        1024  app_func.o(.constdata)
+    winVelPre                                0x00005390   Data         512  app_func.o(.constdata)
+    winRange_self                            0x00005590   Data         512  app_func.o(.constdata)
+    winRange_doppler_self                    0x00005790   Data        2048  app_func.o(.constdata)
+    winV_self                                0x00005f90   Data         128  app_func.o(.constdata)
+    Region$$Table$$Base                      0x00006020   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00006050   Number         0  anon$$obj.o(Region$$Table)
+    flash_buf                                0x20000000   Data        8192  efc.o(.bss)
+    sys_clk                                  0x20004000   Data           4  system_sky32b750.o(.data)
+    hclk                                     0x20004004   Data           4  system_sky32b750.o(.data)
+    pclk                                     0x20004008   Data           4  system_sky32b750.o(.data)
+    pll_clk                                  0x2000400c   Data           4  system_sky32b750.o(.data)
+    lrc_clk                                  0x20004010   Data           4  system_sky32b750.o(.data)
+    hrc_clk                                  0x20004014   Data           4  system_sky32b750.o(.data)
+    can_clk                                  0x20004018   Data           4  system_sky32b750.o(.data)
+    WKU_FLAG_sta0                            0x2000401c   Data           4  system_sky32b750.o(.data)
+    WKU_FLAG_sta1                            0x20004020   Data           4  system_sky32b750.o(.data)
+    WKU_FLAG_sta2                            0x20004024   Data           4  system_sky32b750.o(.data)
+    __stdout                                 0x20004028   Data           4  usart_driver.o(.data)
+    __stdin                                  0x2000402c   Data           4  usart_driver.o(.data)
+    errornum                                 0x20004030   Data           4  usart_driver.o(.data)
+    bConfigMode                              0x20004034   Data           1  usart_driver.o(.data)
+    SysTick_Counter                          0x20004038   Data           4  irq_handler.o(.data)
+    firstChirpCnt                            0x2000403c   Data           4  irq_handler.o(.data)
+    PA_Cnt                                   0x20004040   Data           1  irq_handler.o(.data)
+    ospi_sendover_flag                       0x20004044   Data           1  ospi_driver.o(.data)
+    ospi_receiveover_flag                    0x20004045   Data           1  ospi_driver.o(.data)
+    int_sta                                  0x20004048   Data           4  ospi_driver.o(.data)
+    ospi0_flag                               0x2000404c   Data           1  ospi_driver.o(.data)
+    ospi1_flag                               0x2000404d   Data           1  ospi_driver.o(.data)
+    Objwei                                   0x20004050   Data           6  main.o(.data)
+    HeadSendBuf                              0x20004056   Data           8  main.o(.data)
+    value                                    0x20004060   Data           4  main.o(.data)
+    TargetFreIndex                           0x20004064   Data           1  main.o(.data)
+    ucFireSignal                             0x20004065   Data           1  main.o(.data)
+    InitState                                0x20004066   Data           1  main.o(.data)
+    Timerflag                                0x20004067   Data           1  main.o(.data)
+    prepCfg1_TX_Seq                          0x20004068   Data           4  bb_config.o(.data)
+    bb_regb_str                              0x2000406c   Data           4  bb_config.o(.data)
+    GlobalTimeSlice                          0x20004078   Data           8  led.o(.data)
+    soft_version                             0x20004080   Data          24  product.o(.data)
+    TargetFreSend                            0x20004098   Data           1  product.o(.data)
+    AccTime                                  0x2000409c   Data           4  app_func.o(.data)
+    calib_apBuf_Cpx                          0x200040a0   Data           4  app_func.o(.data)
+    calib_apBuf_Pf                           0x200040a4   Data           4  app_func.o(.data)
+    winRange                                 0x200040a8   Data           4  app_func.o(.data)
+    winVel                                   0x200040ac   Data           4  app_func.o(.data)
+    sincBuf_Cpx                              0x200040b0   Data           4  app_func.o(.data)
+    sincBuf_Pf                               0x200040b4   Data           4  app_func.o(.data)
+    steeringVec_Pf                           0x200040b8   Data           4  app_func.o(.data)
+    FFT1D_Buf                                0x200040bc   Data           4  app_func.o(.data)
+    FFT1D_ABS_Buf                            0x200040c0   Data           4  app_func.o(.data)
+    abuf16                                   0x200040c4   Data           4  app_func.o(.data)
+    FFT2D_Buf                                0x200040c8   Data           4  app_func.o(.data)
+    FFT2D_ABS_Buf                            0x200040cc   Data           4  app_func.o(.data)
+    FFT2D_COLLECT_CACHE_Buf                  0x200040d0   Data           4  app_func.o(.data)
+    FFT3D_Buf                                0x200040d4   Data           4  app_func.o(.data)
+    FFT4D_Pre                                0x200040d8   Data           4  app_func.o(.data)
+    bb_dpkRst_str                            0x200040dc   Data           4  app_func.o(.data)
+    bb_cfarRst_str                           0x200040e0   Data           4  app_func.o(.data)
+    frameRst                                 0x200040e4   Data           4  app_func.o(.data)
+    clllectresult                            0x200040e8   Data           4  app_func.o(.data)
+    Groupresult                              0x200040ec   Data           4  app_func.o(.data)
+    ProtocolPackBuff                         0x200040f0   Data           4  app_func.o(.data)
+    ProtocolSendLen                          0x200040f4   Data           4  app_func.o(.data)
+    cfarTargetNum                            0x200040f8   Data           8  app_func.o(.data)
+    cfarCollectTargetNum                     0x20004100   Data           4  app_func.o(.data)
+    ACCAntChannelNumer                       0x20004104   Data           2  app_func.o(.data)
+    frameTime                                0x20004106   Data           2  app_func.o(.data)
+    sTestFltReal                             0x20004108   Data           4  app_func.o(.data)
+    sTestFltImag                             0x2000410c   Data           4  app_func.o(.data)
+    sTestIntReal                             0x20004110   Data           4  app_func.o(.data)
+    sTestIntImag                             0x20004114   Data           4  app_func.o(.data)
+    sTestR                                   0x20004118   Data           4  app_func.o(.data)
+    sTestI                                   0x2000411c   Data           4  app_func.o(.data)
+    sTestRR                                  0x20004120   Data           4  app_func.o(.data)
+    d1Cnt                                    0x20004124   Data           2  app_func.o(.data)
+    dma_irq_sta                              0x20004128   Data          24  dma.o(.bss)
+    dma_callback                             0x20004140   Data          32  dma.o(.bss)
+    SPI0                                     0x20004160   Data          36  spi_driver.o(.bss)
+    SPI_write_data                           0x20004184   Data          10  spi_driver.o(.bss)
+    SPI_read_data                            0x2000418e   Data          10  spi_driver.o(.bss)
+    strUsart                                 0x20004198   Data          72  usart_driver.o(.bss)
+    stTxUart                                 0x200041e0   Data          72  usart_driver.o(.bss)
+    USART0                                   0x20004228   Data          36  usart_driver.o(.bss)
+    Target_result                            0x20004250   Data          32  main.o(.bss)
+    gstSysPara                               0x20004270   Data          24  main.o(.bss)
+    SendBuf                                  0x20004288   Data         128  main.o(.bss)
+    TestSendBuf                              0x20004308   Data         128  main.o(.bss)
+    bb_prep                                  0x20004388   Data          40  bb_config.o(.bss)
+    cfarCfg0_st                              0x200043b0   Data          16  bb_config.o(.bss)
+    fft2d_zp                                 0x200043c0   Data          32  bb_config.o(.bss)
+    r2_str                                   0x200043e0   Data          76  paramconfig.o(.bss)
+    VcfarRangeTarget                         0x20004430   Data          16  app_func.o(.bss)
+    cfarCollectAntNumber                     0x20004440   Data         128  app_func.o(.bss)
+    cfarCollectVelocity                      0x200044c0   Data         128  app_func.o(.bss)
+    AntObjNumer                              0x20004540   Data          16  app_func.o(.bss)
+    VcfarRanngResult                         0x20004550   Data        4096  app_func.o(.bss)
+    ChosenOne                                0x20005550   Data          48  app_func.o(.bss)
+    ChosenOneCompensate                      0x20005580   Data          48  app_func.o(.bss)
+    CfarSendBuf                              0x200055b0   Data          10  app_func.o(.bss)
+    __initial_sp                             0x20005dc0   Data           0  startup_sky32b750.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000e1
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00006178, Max: 0x00040000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00006050, Max: 0x00040000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000e0   Data   RO            3    RESET               startup_sky32b750.o
+    0x000000e0   0x000000e0   0x00000000   Code   RO         2247  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000e0   0x000000e0   0x00000004   Code   RO         2535    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000e4   0x000000e4   0x00000004   Code   RO         2538    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000e8   0x000000e8   0x00000000   Code   RO         2540    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000000e8   0x000000e8   0x00000000   Code   RO         2542    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000000e8   0x000000e8   0x00000008   Code   RO         2543    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000000f0   0x000000f0   0x00000000   Code   RO         2545    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000000f0   0x000000f0   0x00000000   Code   RO         2547    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000000f0   0x000000f0   0x00000004   Code   RO         2536    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000f4   0x000000f4   0x00000024   Code   RO            4    .text               startup_sky32b750.o
+    0x00000118   0x00000118   0x00000062   Code   RO         2250    .text               mc_w.l(uldiv.o)
+    0x0000017a   0x0000017a   0x0000001e   Code   RO         2252    .text               mc_w.l(llshl.o)
+    0x00000198   0x00000198   0x00000024   Code   RO         2254    .text               mc_w.l(memcpya.o)
+    0x000001bc   0x000001bc   0x00000024   Code   RO         2256    .text               mc_w.l(memseta.o)
+    0x000001e0   0x000001e0   0x0000014e   Code   RO         2521    .text               mf_w.l(dadd.o)
+    0x0000032e   0x0000032e   0x000000e4   Code   RO         2523    .text               mf_w.l(dmul.o)
+    0x00000412   0x00000412   0x000000de   Code   RO         2525    .text               mf_w.l(ddiv.o)
+    0x000004f0   0x000004f0   0x0000001a   Code   RO         2527    .text               mf_w.l(dfltui.o)
+    0x0000050a   0x0000050a   0x00000032   Code   RO         2529    .text               mf_w.l(dfixui.o)
+    0x0000053c   0x0000053c   0x00000038   Code   RO         2533    .text               mf_w.l(d2f.o)
+    0x00000574   0x00000574   0x00000020   Code   RO         2551    .text               mc_w.l(llushr.o)
+    0x00000594   0x00000594   0x00000024   Code   RO         2553    .text               mc_w.l(llsshr.o)
+    0x000005b8   0x000005b8   0x00000000   Code   RO         2555    .text               mc_w.l(iusefp.o)
+    0x000005b8   0x000005b8   0x0000006e   Code   RO         2556    .text               mf_w.l(fepilogue.o)
+    0x00000626   0x00000626   0x000000ba   Code   RO         2558    .text               mf_w.l(depilogue.o)
+    0x000006e0   0x000006e0   0x00000024   Code   RO         2564    .text               mc_w.l(init.o)
+    0x00000704   0x00000704   0x000000c0   Code   RO         1317    i.ADC_Init          adc_driver.o
+    0x000007c4   0x000007c4   0x0000009c   Code   RO         1758    i.BB_CFAR_CFG0      bb_config.o
+    0x00000860   0x00000860   0x000001b4   Code   RO         1764    i.BB_FFT2D_ZP_Init  bb_config.o
+    0x00000a14   0x00000a14   0x0000006c   Code   RO         1765    i.BB_FFT_ZP_Clear   bb_config.o
+    0x00000a80   0x00000a80   0x0000006c   Code   RO         1248    i.BB_IRQHandler     irq_handler.o
+    0x00000aec   0x00000aec   0x0000003c   Code   RO         1766    i.BB_IRQ_Init       bb_config.o
+    0x00000b28   0x00000b28   0x00000120   Code   RO         2142    i.BB_Init           app_func.o
+    0x00000c48   0x00000c48   0x00000244   Code   RO         1767    i.BB_PrepConfig     bb_config.o
+    0x00000e8c   0x00000e8c   0x000000ac   Code   RO         1769    i.BB_RANG_CFAR_CONFIG  bb_config.o
+    0x00000f38   0x00000f38   0x000000d4   Code   RO         1770    i.BB_VEL_CFAR_CONFIG  bb_config.o
+    0x0000100c   0x0000100c   0x00000018   Code   RO         1771    i.BB_WBUF_W16       bb_config.o
+    0x00001024   0x00001024   0x00000018   Code   RO         1772    i.BB_WBUF_W32       bb_config.o
+    0x0000103c   0x0000103c   0x00000030   Code   RO         1775    i.BB_waitISR        bb_config.o
+    0x0000106c   0x0000106c   0x000000fc   Code   RO           14    i.Cache_Disable     system_sky32b750.o
+    0x00001168   0x00001168   0x000000d0   Code   RO           16    i.Cache_Invalidate  system_sky32b750.o
+    0x00001238   0x00001238   0x00000014   Code   RO         1318    i.Chip1_ADC_Init    adc_driver.o
+    0x0000124c   0x0000124c   0x000002ec   Code   RO         1777    i.Chip1_BB_PrepConfig  bb_config.o
+    0x00001538   0x00001538   0x00000028   Code   RO         1180    i.Cnt_Delay_ms      delay_driver.o
+    0x00001560   0x00001560   0x00000016   Code   RO         1181    i.Cnt_Delay_us      delay_driver.o
+    0x00001576   0x00001576   0x00000002   PAD
+    0x00001578   0x00001578   0x000000a0   Code   RO          617    i.DMA_Clear_Irq     dma.o
+    0x00001618   0x00001618   0x00000130   Code   RO          621    i.DMA_IRQHandler    dma.o
+    0x00001748   0x00001748   0x00000044   Code   RO         1964    i.Default_Param_Config  paramconfig.o
+    0x0000178c   0x0000178c   0x00000050   Code   RO          816    i.EFC_Get_ActualAddress  efc.o
+    0x000017dc   0x000017dc   0x000000d4   Code   RO          817    i.EFC_ReWrite       efc.o
+    0x000018b0   0x000018b0   0x00000138   Code   RO          825    i.EFC_WriteInside1Page  efc.o
+    0x000019e8   0x000019e8   0x00000040   Code   RO          785    i.FADC_SPI_WriteSingle  fadc.o
+    0x00001a28   0x00001a28   0x00000068   Code   RO           19    i.FPU_Enable        system_sky32b750.o
+    0x00001a90   0x00001a90   0x0000000c   Code   RO         2143    i.Func_Init         app_func.o
+    0x00001a9c   0x00001a9c   0x000000cc   Code   RO          357    i.GPIO_AE_Ctrl      gpio.o
+    0x00001b68   0x00001b68   0x000000bc   Code   RO         1047    i.GPIO_Init         gpio_driver.o
+    0x00001c24   0x00001c24   0x0000008c   Code   RO          362    i.GPIO_PullUp       gpio.o
+    0x00001cb0   0x00001cb0   0x00000014   Code   RO          364    i.GPIO_SetMode      gpio.o
+    0x00001cc4   0x00001cc4   0x0000002c   Code   RO         1965    i.Get_Effective_Param  paramconfig.o
+    0x00001cf0   0x00001cf0   0x00000084   Code   RO           20    i.Get_SysClk_Config  system_sky32b750.o
+    0x00001d74   0x00001d74   0x000000a8   Code   RO           21    i.HRC_System_Clock_Update  system_sky32b750.o
+    0x00001e1c   0x00001e1c   0x00000064   Code   RO          293    i.HW_Delay_ms       delay.o
+    0x00001e80   0x00001e80   0x00000110   Code   RO           22    i.HXTAL_Caliber_LRC  system_sky32b750.o
+    0x00001f90   0x00001f90   0x000000dc   Code   RO           23    i.LRC_Caliber_HRC   system_sky32b750.o
+    0x0000206c   0x0000206c   0x000002e0   Code   RO         1224    i.MPU_LocalConfig   mpu_driver.o
+    0x0000234c   0x0000234c   0x0000031e   Code   RO         2144    i.MmwDemo_cfarPeakGroupingCfarQualified  app_func.o
+    0x0000266a   0x0000266a   0x00000002   PAD
+    0x0000266c   0x0000266c   0x00000054   Code   RO           24    i.NMI_Handler       system_sky32b750.o
+    0x000026c0   0x000026c0   0x00000030   Code   RO         1423    i.OSPI0_IRQHandler  ospi_driver.o
+    0x000026f0   0x000026f0   0x00000030   Code   RO         1424    i.OSPI1_IRQHandler  ospi_driver.o
+    0x00002720   0x00002720   0x000000a8   Code   RO           25    i.PLL_System_Clock_Update  system_sky32b750.o
+    0x000027c8   0x000027c8   0x00000018   Code   RO         1966    i.ParamConfigInit   paramconfig.o
+    0x000027e0   0x000027e0   0x00000148   Code   RO          460    i.PinMux_Set        pinmux.o
+    0x00002928   0x00002928   0x0000007c   Code   RO         2084    i.Prod_CalcFireHeight  product.o
+    0x000029a4   0x000029a4   0x00000022   Code   RO         2085    i.Prod_CalcRptHeight  product.o
+    0x000029c6   0x000029c6   0x00000002   PAD
+    0x000029c8   0x000029c8   0x00000138   Code   RO         2086    i.Prod_CommHandleK101W  product.o
+    0x00002b00   0x00002b00   0x00000068   Code   RO         2087    i.Prod_SelfCheckK101W  product.o
+    0x00002b68   0x00002b68   0x00000058   Code   RO         2088    i.Prod_SendFireMsgK101W  product.o
+    0x00002bc0   0x00002bc0   0x00000044   Code   RO         2089    i.Prod_SendPeriodicMsgK101W  product.o
+    0x00002c04   0x00002c04   0x000000a8   Code   RO         1572    i.RF_CHIP1_Disable  rf_spi_config.o
+    0x00002cac   0x00002cac   0x00000020   Code   RO         1574    i.RF_CHIPEN         rf_spi_config.o
+    0x00002ccc   0x00002ccc   0x000000a8   Code   RO         1575    i.RF_CHIPEN_Disable  rf_spi_config.o
+    0x00002d74   0x00002d74   0x00000008   Code   RO         1577    i.RF_Clock40M_En    rf_spi_config.o
+    0x00002d7c   0x00002d7c   0x000000b8   Code   RO          911    i.RF_ReadRegSPI     spi_driver.o
+    0x00002e34   0x00002e34   0x00000020   Code   RO          913    i.RF_SPI_CS_CTRL    spi_driver.o
+    0x00002e54   0x00002e54   0x00000078   Code   RO         1581    i.RF_WaveSet        rf_spi_config.o
+    0x00002ecc   0x00002ecc   0x00000034   Code   RO          914    i.RF_WriteCmdSPI    spi_driver.o
+    0x00002f00   0x00002f00   0x000000a0   Code   RO          915    i.RF_WriteRegSPI_Fast  spi_driver.o
+    0x00002fa0   0x00002fa0   0x0000004c   Code   RO          916    i.RF_WriteWaveSPI   spi_driver.o
+    0x00002fec   0x00002fec   0x00000180   Code   RO         1968    i.Read_Param_From_Flash  paramconfig.o
+    0x0000316c   0x0000316c   0x000000ac   Code   RO         1969    i.ResolutionCount   paramconfig.o
+    0x00003218   0x00003218   0x000000a4   Code   RO          917    i.SPI_Init          spi_driver.o
+    0x000032bc   0x000032bc   0x00000048   Code   RO         1353    i.SYS_CLK_HRC_Init  sysclk_driver.o
+    0x00003304   0x00003304   0x00000058   Code   RO         1354    i.SYS_CLK_PLL_Init  sysclk_driver.o
+    0x0000335c   0x0000335c   0x0000033c   Code   RO         1970    i.Save_Param_Config  paramconfig.o
+    0x00003698   0x00003698   0x00000016   Code   RO           31    i.Set_CanClk_Div    system_sky32b750.o
+    0x000036ae   0x000036ae   0x00000016   Code   RO           33    i.Set_Flash_WS      system_sky32b750.o
+    0x000036c4   0x000036c4   0x00000020   Code   RO           34    i.Set_HRC           system_sky32b750.o
+    0x000036e4   0x000036e4   0x00000050   Code   RO           36    i.Set_PLL           system_sky32b750.o
+    0x00003734   0x00003734   0x000000a4   Code   RO           37    i.Set_SysClk_Config  system_sky32b750.o
+    0x000037d8   0x000037d8   0x00000018   Code   RO           38    i.Set_SysClk_Div    system_sky32b750.o
+    0x000037f0   0x000037f0   0x00000010   Code   RO         1249    i.SysTick_Handler   irq_handler.o
+    0x00003800   0x00003800   0x0000007c   Code   RO         1508    i.Sys_CalcVeloFftPt  main.o
+    0x0000387c   0x0000387c   0x000000e0   Code   RO         1509    i.Sys_Init          main.o
+    0x0000395c   0x0000395c   0x00000018   Code   RO         1510    i.Sys_SelfCheck     main.o
+    0x00003974   0x00003974   0x00000024   Code   RO           39    i.SystemInit        system_sky32b750.o
+    0x00003998   0x00003998   0x0000007c   Code   RO         2037    i.TMRA_IRQHandler   led.o
+    0x00003a14   0x00003a14   0x00000026   Code   RO         2145    i.Target2D_Process  app_func.o
+    0x00003a3a   0x00003a3a   0x00000002   PAD
+    0x00003a3c   0x00003a3c   0x000000a4   Code   RO         1075    i.USART_Init        usart_driver.o
+    0x00003ae0   0x00003ae0   0x00000014   Code   RO         1076    i.USART_Transmit_Bytes  usart_driver.o
+    0x00003af4   0x00003af4   0x0000009c   Code   RO         1078    i.USCI4_IRQHandler  usart_driver.o
+    0x00003b90   0x00003b90   0x00000008   Code   RO          484    i.USCI_Clear_ESR    usci.o
+    0x00003b98   0x00003b98   0x00000008   Code   RO          485    i.USCI_Clear_ISR    usci.o
+    0x00003ba0   0x00003ba0   0x0000008a   Code   RO          488    i.USCI_SPI_Init     usci.o
+    0x00003c2a   0x00003c2a   0x00000058   Code   RO          493    i.USCI_SPI_Transmit  usci.o
+    0x00003c82   0x00003c82   0x00000002   PAD
+    0x00003c84   0x00003c84   0x00000094   Code   RO          498    i.USCI_UART_Init    usci.o
+    0x00003d18   0x00003d18   0x00000058   Code   RO          500    i.USCI_UART_Transmit  usci.o
+    0x00003d70   0x00003d70   0x00000034   Code   RO          737    i.WDT_Enable        wdt.o
+    0x00003da4   0x00003da4   0x0000001c   Code   RO          738    i.WDT_Open          wdt.o
+    0x00003dc0   0x00003dc0   0x00000010   Code   RO         1923    i.Word2Byte         usart_protocol.o
+    0x00003dd0   0x00003dd0   0x00000054   Code   RO         1924    i.XFProtocol_Analysis_Handle  usart_protocol.o
+    0x00003e24   0x00003e24   0x0000003c   Code   RO         1582    i.__NVIC_DisableIRQ  rf_spi_config.o
+    0x00003e60   0x00003e60   0x00000022   Code   RO         1583    i.__NVIC_EnableIRQ  rf_spi_config.o
+    0x00003e82   0x00003e82   0x0000000e   Code   RO         2568    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00003e90   0x00003e90   0x00000002   Code   RO         2569    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00003e92   0x00003e92   0x0000000e   Code   RO         2570    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00003ea0   0x00003ea0   0x0000001a   Code   RO         1925    i.getBcc            usart_protocol.o
+    0x00003eba   0x00003eba   0x00000002   PAD
+    0x00003ebc   0x00003ebc   0x0000003c   Code   RO         1511    i.main              main.o
+    0x00003ef8   0x00003ef8   0x00000088   Code   RO         2146    i.mmWave_BbPrep     app_func.o
+    0x00003f80   0x00003f80   0x0000027c   Code   RO         2147    i.mmWave_CfarRange  app_func.o
+    0x000041fc   0x000041fc   0x00000370   Code   RO         2148    i.mmWave_CfarVelocity  app_func.o
+    0x0000456c   0x0000456c   0x000002a0   Code   RO         2149    i.mmWave_FftRange   app_func.o
+    0x0000480c   0x0000480c   0x00000224   Code   RO         2150    i.mmWave_FftVelocity  app_func.o
+    0x00004a30   0x00004a30   0x000000c8   Code   RO         2151    i.mmWave_FireProc   app_func.o
+    0x00004af8   0x00004af8   0x0000001a   Code   RO         2152    i.mmWave_Init       app_func.o
+    0x00004b12   0x00004b12   0x00000002   PAD
+    0x00004b14   0x00004b14   0x00000094   Code   RO         2153    i.mmWave_Process    app_func.o
+    0x00004ba8   0x00004ba8   0x0000026c   Code   RO         2154    i.mmWave_TargetProc  app_func.o
+    0x00004e14   0x00004e14   0x0000010a   Code   RO         1584    i.rc6011_init_chip1  rf_spi_config.o
+    0x00004f1e   0x00004f1e   0x0000000c   Code   RO         1589    i.waveGenClear_RF1  rf_spi_config.o
+    0x00004f2a   0x00004f2a   0x0000000c   Code   RO         1592    i.waveGenStart1     rf_spi_config.o
+    0x00004f36   0x00004f36   0x0000000c   Code   RO         1594    i.waveGenStop       rf_spi_config.o
+    0x00004f42   0x00004f42   0x0000000c   Code   RO         1595    i.waveGenStop1      rf_spi_config.o
+    0x00004f4e   0x00004f4e   0x00000002   PAD
+    0x00004f50   0x00004f50   0x000010d0   Data   RO         2156    .constdata          app_func.o
+    0x00006020   0x00006020   0x00000030   Data   RO         2566    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00006050, Size: 0x00002000, Max: 0x00004000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000        -       0x00002000   Zero   RW          826    .bss                efc.o
+
+
+    Execution Region RW_IRAM2 (Exec base: 0x20004000, Load base: 0x00006050, Size: 0x00001dc0, Max: 0x00004000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20004000   0x00006050   0x00000028   Data   RW           40    .data               system_sky32b750.o
+    0x20004028   0x00006078   0x0000000d   Data   RW         1088    .data               usart_driver.o
+    0x20004035   0x00006085   0x00000003   PAD
+    0x20004038   0x00006088   0x00000009   Data   RW         1250    .data               irq_handler.o
+    0x20004041   0x00006091   0x00000003   PAD
+    0x20004044   0x00006094   0x0000000a   Data   RW         1433    .data               ospi_driver.o
+    0x2000404e   0x0000609e   0x00000002   PAD
+    0x20004050   0x000060a0   0x00000018   Data   RW         1513    .data               main.o
+    0x20004068   0x000060b8   0x00000008   Data   RW         1782    .data               bb_config.o
+    0x20004070   0x000060c0   0x00000010   Data   RW         2039    .data               led.o
+    0x20004080   0x000060d0   0x00000019   Data   RW         2090    .data               product.o
+    0x20004099   0x000060e9   0x00000003   PAD
+    0x2000409c   0x000060ec   0x0000008a   Data   RW         2157    .data               app_func.o
+    0x20004126   0x00006176   0x00000002   PAD
+    0x20004128        -       0x00000038   Zero   RW          627    .bss                dma.o
+    0x20004160        -       0x00000038   Zero   RW          918    .bss                spi_driver.o
+    0x20004198        -       0x000000b4   Zero   RW         1087    .bss                usart_driver.o
+    0x2000424c   0x00006176   0x00000004   PAD
+    0x20004250        -       0x00000138   Zero   RW         1512    .bss                main.o
+    0x20004388        -       0x00000058   Zero   RW         1781    .bss                bb_config.o
+    0x200043e0        -       0x0000004c   Zero   RW         1971    .bss                paramconfig.o
+    0x2000442c   0x00006176   0x00000004   PAD
+    0x20004430        -       0x0000118a   Zero   RW         2155    .bss                app_func.o
+    0x200055ba   0x00006176   0x00000006   PAD
+    0x200055c0        -       0x00000800   Zero   RW            1    STACK               startup_sky32b750.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       212         18          0          0          0        996   adc_driver.o
+      5002        260       4304        138       4490      14274   app_func.o
+      2568        106          0          8         88       8577   bb_config.o
+       100          4          0          0          0      97550   delay.o
+        62          8          0          0          0       1122   delay_driver.o
+       464         26          0          0         56       6784   dma.o
+       604         42          0          0       8192      39552   efc.o
+        64          6          0          0          0        679   fadc.o
+       364         18          0          0          0       2396   gpio.o
+       188         10          0          0          0        544   gpio_driver.o
+       124         14          0          9          0       1241   irq_handler.o
+       124         20          0         16          0        756   led.o
+       432         38          0         24        312       4552   main.o
+         0          0          0          0          0      39511   mpu.o
+       736         32          0          0          0       1418   mpu_driver.o
+        96         26          0         10          0       1667   ospi_driver.o
+      1520         74          0          0         76       6074   paramconfig.o
+       328          8          0          0          0       1273   pinmux.o
+       730         64          0         25          0       4850   product.o
+       904         12          0          0          0       6404   rf_spi_config.o
+       668         62          0          0         56      26621   spi_driver.o
+        36          8        224          0       2048        928   startup_sky32b750.o
+       160         16          0          0          0       1042   sysclk_driver.o
+      1988        160          0         40          0     158643   system_sky32b750.o
+       340         38          0         13        180      40470   usart_driver.o
+       126         10          0          0          0       2243   usart_protocol.o
+       478          6          0          0          0       4416   usci.o
+        80         20          0          0          0       1048   wdt.o
+
+    ----------------------------------------------------------------------
+     18514       1106       4576        296      15512     475631   Object Totals
+         0          0         48          0          0          0   (incl. Generated)
+        16          0          0         13         14          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        30          0          0          0          0         68   llshl.o
+        36          0          0          0          0         68   llsshr.o
+        32          0          0          0          0         68   llushr.o
+        36          0          0          0          0         68   memcpya.o
+        36          0          0          0          0        108   memseta.o
+        98          0          0          0          0         92   uldiv.o
+        56          0          0          0          0         88   d2f.o
+       334          0          0          0          0        148   dadd.o
+       222          0          0          0          0        100   ddiv.o
+       186          0          0          0          0        176   depilogue.o
+        50          0          0          0          0         76   dfixui.o
+        26          0          0          0          0         76   dfltui.o
+       228          0          0          0          0         96   dmul.o
+       110          0          0          0          0        168   fepilogue.o
+
+    ----------------------------------------------------------------------
+      1566         16          0          0          0       1468   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       354         16          0          0          0        540   mc_w.l
+      1212          0          0          0          0        928   mf_w.l
+
+    ----------------------------------------------------------------------
+      1566         16          0          0          0       1468   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     20080       1122       4576        296      15512     465827   Grand Totals
+     20080       1122       4576        296      15512     465827   ELF Image Totals
+     20080       1122       4576        296          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                24656 (  24.08kB)
+    Total RW  Size (RW Data + ZI Data)             15808 (  15.44kB)
+    Total ROM Size (Code + RO Data + RW Data)      24952 (  24.37kB)
+
+==============================================================================
+
